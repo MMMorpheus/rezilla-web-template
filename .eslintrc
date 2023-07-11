@@ -1,0 +1,35 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "es2017": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "module"
+  },
+  "ignorePatterns": [
+    "build/**/*"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base"
+  ],
+  "rules": {
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "warn",
+          "error",
+          "log"
+        ]
+      }
+    ],
+    "linebreak-style": "off",
+    "import/prefer-default-export": "off",
+    "import/extensions": "ignorePackages",
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["gulpfile.babel.js", "gulp/**/*.js"]}]
+  }
+}
