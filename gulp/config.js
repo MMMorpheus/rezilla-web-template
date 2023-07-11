@@ -5,7 +5,7 @@ const config = {
   src: {
     root: srcPath,
     html: `${srcPath}/html/*.html`,
-    scss: `${srcPath}/scss/*.scss`,
+    scss: `${srcPath}/scss/main.scss`,
     scripts: `${srcPath}/scripts`,
     fonts: `${srcPath}/assets/fonts`,
     img: `${srcPath}/assets/img`,
