@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "gulp watch",
     "build:dev": "gulp build",
-    "build:prod": "gulp build --prod"
+    "build:prod": "gulp build --prod",
+    "prepare": "husky install"
   },
   "keywords": [
     "gulp",
@@ -20,9 +21,12 @@
   "author": "MMMorpheus",
   "license": "WTFPL",
   "browserslist": [
-    ">  0.2%",
+    "> 0.2%",
     "IE 11"
   ],
+  "lint-staged": {
+    "src/**/*.scss": "stylelint **/*.scss --fix"
+  },
   "devDependencies": {
     "@babel/core": "^7.22.8",
     "@babel/preset-env": "^7.22.7",
@@ -43,6 +47,14 @@
     "gulp-rename": "^2.0.0",
     "gulp-replace": "^1.1.4",
     "gulp-sass": "^5.1.0",
-    "sass": "^1.63.6"
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
+    "sass": "^1.63.6",
+    "stylelint": "^15.10.1",
+    "stylelint-at-rule-no-children": "^0.3.1",
+    "stylelint-config-idiomatic-order": "^9.0.0",
+    "stylelint-config-standard-scss": "^10.0.0",
+    "stylelint-declaration-block-no-ignored-properties": "^2.7.0",
+    "stylelint-order": "^6.0.3"
   }
 }

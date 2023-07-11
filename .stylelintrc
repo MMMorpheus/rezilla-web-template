@@ -1,0 +1,61 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-idiomatic-order"
+  ],
+  "plugins": [
+    "stylelint-at-rule-no-children",
+    "stylelint-declaration-block-no-ignored-properties"
+  ],
+  "ignoreFiles": ["./src/scss/normalize.scss"],
+  "defaultSeverity": "error",
+  "rules": {
+    "aditayvm/at-rule-no-children": true,
+    "plugin/declaration-block-no-ignored-properties": true,
+    "color-named": "always-where-possible",
+    "max-nesting-depth": 3,
+    "selector-max-compound-selectors": 2,
+    "selector-max-id": 0,
+    "selector-max-type": 1,
+    "shorthand-property-no-redundant-values": true,
+    "order/order": [
+      "declarations",
+      {
+        "type": "at-rule",
+        "name": "supports"
+      },
+      {
+        "type": "at-rule",
+        "name": "media"
+      },
+      {
+        "type": "rule",
+        "selector": "^&::(before|after),"
+      },
+      {
+        "type": "rule",
+        "selector": "^&::before"
+      },
+      {
+        "type": "rule",
+        "selector": "^&::after"
+      },
+      {
+        "type": "rule",
+        "selector": "^&:\\w"
+      },
+      {
+        "type": "rule",
+        "selector": "^& \\+ &"
+      },
+      {
+        "type": "rule",
+        "selector": "^&_"
+      },
+      {
+        "type": "rule",
+        "selector": "^."
+      }
+    ]
+  }
+}
