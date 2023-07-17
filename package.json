@@ -25,7 +25,10 @@
     "IE 11"
   ],
   "lint-staged": {
-    "src/**/*.scss": "stylelint **/*.scss --fix"
+    "src/**/*.scss": [
+      "prettier --write",
+      "stylelint **/*.scss --fix"
+    ]
   },
   "devDependencies": {
     "@babel/core": "^7.22.8",
@@ -49,6 +52,7 @@
     "gulp-sass": "^5.1.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
+    "prettier": "^3.0.0",
     "sass": "^1.63.6",
     "stylelint": "^15.10.1",
     "stylelint-at-rule-no-children": "^0.3.1",
