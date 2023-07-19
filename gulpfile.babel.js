@@ -9,13 +9,16 @@ import {
   stylesWatch,
   scriptsBuild,
   scriptsWatch,
+  fontsBuild
 } from './gulp/tasks/index.js';
 
 config.setEnv();
 
-export const build = gulp.series(clean, gulp.parallel(htmlBuild, stylesBuild, scriptsBuild));
+export const build = gulp.series(clean, gulp.series(fontsBuild, gulp.parallel(htmlBuild, stylesBuild, scriptsBuild)));
 
 export const watch = gulp.series(
   build,
   gulp.parallel(server, htmlWatch, stylesWatch, scriptsWatch)
 );
+
+export const font = fontsBuild
