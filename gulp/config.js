@@ -1,12 +1,12 @@
 const srcPath = './src';
-const destPath = './build';
+const destPath = './dist';
 
 const config = {
   src: {
     root: srcPath,
     html: `${srcPath}/html/*.html`,
     scss: `${srcPath}/scss/main.scss`,
-    scripts: `${srcPath}/scripts`,
+    scripts: `${srcPath}/scripts/app.js`,
     fonts: `${srcPath}/assets/fonts`,
     img: `${srcPath}/assets/img`,
     icons: `${srcPath}/assets/icons`,
@@ -22,7 +22,8 @@ const config = {
   watch: {
     root: srcPath,
     html: `${srcPath}/html/**/*.html`,
-    scss: `${srcPath}/scss/**/*.scss`
+    scss: `${srcPath}/scss/**/*.scss`,
+    scripts: `${srcPath}/scripts/**/*.js`,
   },
   setEnv() {
     this.isProd = process.argv.includes('--prod');

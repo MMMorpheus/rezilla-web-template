@@ -3,7 +3,7 @@ import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
 import fileinclude from 'gulp-file-include';
 import replace from 'gulp-replace';
-import { stream } from 'browser-sync';
+// import { stream } from 'browser-sync';
 import config from '../config.js';
 
 export const htmlBuild = () => {

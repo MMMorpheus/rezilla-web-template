@@ -15,7 +15,7 @@
     "gulp",
     "html",
     "sass",
-    "typescript",
+    "javascript",
     "lint"
   ],
   "author": "MMMorpheus",
@@ -59,6 +59,8 @@
     "stylelint-config-idiomatic-order": "^9.0.0",
     "stylelint-config-standard-scss": "^10.0.0",
     "stylelint-declaration-block-no-ignored-properties": "^2.7.0",
-    "stylelint-order": "^6.0.3"
+    "stylelint-order": "^6.0.3",
+    "webpack": "^5.88.1",
+    "webpack-stream": "^7.0.0"
   }
 }

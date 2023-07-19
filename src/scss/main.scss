@@ -1,1 +1,6 @@
-@import "normalize";
+@import 'normalize';
+
+.wrapper {
+  display: flex;
+  justify-content: start;
+}
