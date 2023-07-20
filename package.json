@@ -1,11 +1,10 @@
 {
-  "name": "gulp-sass-typescript",
+  "name": "gulp-frontend-vanilla",
   "version": "1.0.0",
   "description": "",
   "type": "module",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "gulp watch",
     "build:dev": "gulp build",
     "build:prod": "gulp build --prod",

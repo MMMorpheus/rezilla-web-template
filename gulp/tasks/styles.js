@@ -16,7 +16,7 @@ const sass = gulpSass(dartSass);
 
 export const stylesBuild = () => {
   return gulp
-    .src(config.src.scss, { sourcemaps: true })
+    .src(config.src.scss, { sourcemaps: config.isDev })
     .pipe(
       plumber(
         notify.onError({

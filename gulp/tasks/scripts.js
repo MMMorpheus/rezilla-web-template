@@ -7,7 +7,7 @@ import config from '../config.js';
 
 export const scriptsBuild = () => {
   return gulp
-    .src(config.src.scripts, { sourcemaps: true })
+    .src(config.src.scripts, { sourcemaps: config.isDev })
     .pipe(
       plumber(
         notify.onError({
