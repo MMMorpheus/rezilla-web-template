@@ -8,8 +8,10 @@ const config = {
     scss: `${srcPath}/scss/main.scss`,
     scripts: `${srcPath}/scripts/app.js`,
     fonts: `${srcPath}/assets/fonts`,
-    img: `${srcPath}/assets/img`,
-    icons: `${srcPath}/assets/icons`,
+    img: `${srcPath}/assets/img/**/*.{jpg, jpeg, png, gif, webp, svg}`,
+    imgToWebp: `${srcPath}/assets/img/**/*.{jpg, jpeg, png}`,
+    svgSprite: `${srcPath}/assets/img/icons/*.svg`,
+    favicons: `${srcPath}/assets/favicons/*.{jpg, jpeg, png, gif}`
   },
   dest: {
     root: destPath,
@@ -18,12 +20,14 @@ const config = {
     js: `${destPath}/js`,
     fonts: `${destPath}/fonts`,
     img: `${destPath}/img`,
+    favicons: `${destPath}/img/favicons`,
   },
   watch: {
     root: srcPath,
     html: `${srcPath}/html/**/*.html`,
     scss: `${srcPath}/scss/**/*.scss`,
     scripts: `${srcPath}/scripts/**/*.js`,
+    img: `${srcPath}/assets/img/**/*.{jpg, jpeg, png, gif, webp, svg}`,
   },
   setEnv() {
     this.isProd = process.argv.includes('--prod');
