@@ -9,15 +9,25 @@ $breakpoint992: 991.98 + px;
 $breakpoint768: 767.98 + px;
 $breakpoint480: 479.98 + px;
 
-// Colors
-$mainColor: black;
+// Color schema
+$darkBlue: #3A0CA3;
+$blue: #4361EE;
+$lightBlue: #edf0fe;
+$white: white;
+$black: black;
+$menuBlack: #2B2B2B;
+$logoBlack: #1E1E1E;
+$burgerBlack: #0B090A;
+$grey: #ada8a8;
 
 // Burger
 $burgerBreakPoint: $breakpoint992;
 
 // Font families
-$fontPrimary: sans-serif
+$fontPrimary: poppins;
+$fontSecondery: sans-serif;
 
 // Тут должны быть объявлены переменные для шрифтов и изменения их размера при медиа-запросах
+$bannerFontSize: 13.3 + px;
 
 

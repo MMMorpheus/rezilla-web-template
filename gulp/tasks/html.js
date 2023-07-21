@@ -18,6 +18,7 @@ export const htmlBuild = () => {
     )
     .pipe(fileinclude())
     .pipe(replace(/@img\//g, 'img/'))
+    .pipe(replace(/@icons\//g, 'img/'))
     .pipe(gulp.dest(config.dest.html))
 
 };

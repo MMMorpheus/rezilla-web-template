@@ -1,8 +1,9 @@
-// Normalieze
+// Normalize
 @import 'normalize';
+@import './mixins/**/*'
 
 // App essentials
-// @import 'fonts';
+@import 'fonts';
 @import 'vars';
 @import 'global';
 

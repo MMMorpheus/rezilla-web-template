@@ -26,10 +26,13 @@
         "allow": [
           "warn",
           "error",
-          "log"
+          "log",
+          "dir"
         ]
       }
     ],
+    "no-unused-vars": "warn",
+    "semi": "warn",
     "linebreak-style": "off",
     "import/prefer-default-export": "off",
     "import/extensions": 1,

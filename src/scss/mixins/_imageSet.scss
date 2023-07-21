@@ -1,0 +1,7 @@
+@mixin imageSet($pathToImage) {
+  background-image: url("#{$pathToImage}.jpg");
+  background-image: image-set(
+    "#{$pathToImage}.webp"type("image/webp"),
+    "#{$pathToImage}.jpg"type("image/jpg"),
+  );
+}
