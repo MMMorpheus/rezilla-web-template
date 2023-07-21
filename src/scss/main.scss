@@ -1,7 +1,10 @@
+// Normalieze
 @import 'normalize';
-@import 'fonts';
 
-.wrapper {
-  display: flex;
-  justify-content: start;
-}
+// App essentials
+@import 'fonts';
+@import 'vars';
+@import 'global';
+
+// App components
+@import "./components/**/*"

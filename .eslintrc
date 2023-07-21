@@ -11,6 +11,7 @@
   },
   "ignorePatterns": [
     "dist/**/*",
+    "gulp/**/*",
     "src/scripts/vendor/**/*"
   ],
   "extends": [
@@ -30,7 +31,7 @@
     ],
     "linebreak-style": "off",
     "import/prefer-default-export": "off",
-    "import/extensions": "ignorePackages",
+    "import/extensions": 1,
     "import/no-extraneous-dependencies": ["error", {"devDependencies": ["gulpfile.babel.js", "gulp/**/*.js"]}]
   }
 }

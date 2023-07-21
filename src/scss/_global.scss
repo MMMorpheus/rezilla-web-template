@@ -1,0 +1,32 @@
+// Body
+body {
+  font-family: $fontPrimary;
+
+  &.locked {
+    overflow: hidden;
+  }
+}
+
+// Container
+.container {
+  width: 100%;
+  max-width: ($containerWidth + $containerSafePadding) + px;
+  padding: 0 $containerInlinePadding + px;
+  margin: 0 auto;
+
+  @media (max-width: $breakpoint1450) {
+    max-width: 1200px;
+  }
+
+  @media (max-width: $breakpoint992) {
+    max-width: 970px;
+  }
+
+  @media (max-width: $breakpoint768) {
+    max-width: 740px;
+  }
+
+  @media (max-width: $breakpoint480) {
+    max-width: none;
+  }
+}

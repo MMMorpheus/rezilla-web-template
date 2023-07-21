@@ -3,6 +3,7 @@ import gulpIf from 'gulp-if';
 import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
 import replace from 'gulp-replace';
+import sassGlob from 'gulp-sass-glob';
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import autoPrefixer from 'gulp-autoprefixer';
@@ -26,6 +27,7 @@ export const stylesBuild = () => {
       )
     )
     .pipe(replace(/@img\//g, '../img/'))
+    .pipe(sassGlob())
     .pipe(sass())
     .pipe(
       gulpIf(

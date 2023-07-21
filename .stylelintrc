@@ -1,12 +1,6 @@
 {
-  "extends": [
-    "stylelint-config-standard-scss",
-    "stylelint-config-idiomatic-order"
-  ],
-  "plugins": [
-    "stylelint-at-rule-no-children",
-    "stylelint-declaration-block-no-ignored-properties"
-  ],
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-idiomatic-order"],
+  "plugins": ["stylelint-at-rule-no-children", "stylelint-declaration-block-no-ignored-properties"],
   "ignoreFiles": ["./src/scss/_normalize.scss", "./src/scss/_fonts.scss"],
   "defaultSeverity": "error",
   "rules": {
@@ -56,6 +50,11 @@
         "type": "rule",
         "selector": "^."
       }
-    ]
+    ],
+    "scss/dollar-variable-empty-line-before": [
+      "always",
+      { "except": ["first-nested", "after-comment", "after-dollar-variable"] }
+    ],
+    "scss/dollar-variable-pattern": "[a-z]+((\\d)|([A-Z0-9][a-z0-9]+))*([A-Z])?"
   }
 }
