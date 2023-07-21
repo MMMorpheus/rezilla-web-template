@@ -19,7 +19,7 @@ config.setEnv();
 
 export const build = gulp.series(
   clean,
-  gulp.series(fontsBuild, gulp.parallel(htmlBuild, stylesBuild, scriptsBuild, fontsBuild, imagesBuild))
+  gulp.series(fontsBuild, gulp.parallel(htmlBuild, stylesBuild, scriptsBuild, imagesBuild))
 );
 
 export const watch = gulp.series(
@@ -27,4 +27,4 @@ export const watch = gulp.series(
   gulp.parallel(server, htmlWatch, stylesWatch, scriptsWatch, imagesWatch)
 );
 
-export const sprite = svgSpriteBuild;
+export const sprites = svgSpriteBuild;

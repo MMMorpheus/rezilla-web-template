@@ -8,15 +8,15 @@
     "dev": "gulp watch",
     "build:dev": "gulp build",
     "build:prod": "gulp build --prod",
-    "sprite": "gulp sprite",
-    "prepare": "husky install"
+    "sprite": "gulp sprites"
   },
   "keywords": [
     "gulp",
     "html",
     "sass",
     "javascript",
-    "lint"
+    "lint",
+    "husky & lint-staged"
   ],
   "author": "MMMorpheus",
   "license": "WTFPL",
@@ -27,7 +27,7 @@
   "lint-staged": {
     "all": "prettier --write",
     "css": "stylelint **/*.scss --fix",
-    "js": "eslint"
+    "js": "eslint **/*.js"
   },
   "devDependencies": {
     "@babel/core": "^7.22.8",

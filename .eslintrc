@@ -12,6 +12,7 @@
   "ignorePatterns": [
     "dist/**/*",
     "gulp/**/*",
+    "gulpfile.babel.js",
     "src/scripts/vendor/**/*"
   ],
   "extends": [
