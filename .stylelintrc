@@ -4,7 +4,7 @@
   "ignoreFiles": ["./src/scss/_normalize.scss", "./src/scss/_fonts.scss"],
   "defaultSeverity": "error",
   "rules": {
-    "aditayvm/at-rule-no-children": true,
+    "aditayvm/at-rule-no-children": [{ "ignore": ["&:hover"] }],
     "plugin/declaration-block-no-ignored-properties": true,
     "color-named": "always-where-possible",
     "max-nesting-depth": 3,

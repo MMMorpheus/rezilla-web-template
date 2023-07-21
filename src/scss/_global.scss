@@ -30,3 +30,13 @@ body {
     max-width: none;
   }
 }
+
+.wrapper {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+}
+
+.main {
+  flex-grow: 1;
+}

@@ -133,4 +133,4 @@ const createFavicons = () => {
 
 export const imagesBuild = gulp.series(compressImg, toWebp, createFavicons);
 
-export const imagesWatch = () => gulp.watch(config.watch.images, imagesBuild);
+export const imagesWatch = () => gulp.watch(config.watch.img, imagesBuild);
