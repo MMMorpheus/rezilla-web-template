@@ -5,6 +5,7 @@
     "node": true,
     "es2017": true
   },
+  "parser": "@babel/eslint-parcer",
   "parserOptions": {
     "ecmaVersion": 8,
     "sourceType": "module"

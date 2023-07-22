@@ -2,9 +2,8 @@
 body {
   font-family: $fontPrimary, $fontSecondery;
 
-  &.locked {
-    overflow: hidden;
-  }
+  // Отключен горизонтальный скролл чтоб не ломал сайт, когда меню-бургер спрятано за пределами страницы
+  overflow-x: hidden;
 }
 
 // Container
@@ -31,7 +30,10 @@ body {
   }
 }
 
+// Wrapper & Main css's classes press the footer to the page bottom, main element grows the whole available space of page
+// Wrapper & Main css's прижимают футер к низу страницы, елемент main растягивается на все доступное пространство страницы
 .wrapper {
+  position: relative;
   display: flex;
   min-height: 100%;
   flex-direction: column;
@@ -39,4 +41,13 @@ body {
 
 .main {
   flex-grow: 1;
+}
+
+.dis-scroll {
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  overscroll-behavior: none;
 }
