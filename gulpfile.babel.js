@@ -28,3 +28,6 @@ export const watch = gulp.series(
 );
 
 export const sprites = svgSpriteBuild;
+
+import { compressImg } from './gulp/tasks/index.js';
+export const img = compressImg

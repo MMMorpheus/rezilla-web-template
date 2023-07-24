@@ -80,3 +80,52 @@ body {
   font-weight: 400;
   line-height: 26px;
 }
+
+.marquee {
+  position: relative;
+  display: flex;
+  overflow-x: hidden;
+  white-space: nowrap;
+
+  &:hover &__list {
+    @media (hover: hover) {
+      animation-play-state: paused;
+    }
+  }
+
+  &__list {
+    @include listReset;
+    @include flexHCenter;
+
+    width: 100%;
+    flex-shrink: 0;
+    justify-content: space-around;
+    animation: ticker 20s linear infinite;
+  }
+
+  &__item {
+    cursor: pointer;
+    filter: grayscale(1);
+    transition: filter 0.3s ease;
+
+    &:hover {
+      @media (hover: hover) {
+        filter: grayscale(0);
+      }
+    }
+
+    img {
+      height: 100px;
+    }
+  }
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}

@@ -15,9 +15,9 @@ import debug from 'gulp-debug';
 
 import config from '../config.js';
 
-const compressImg = () => {
+export const compressImg = () => {
   return gulp
-    .src([config.src.img, config.src.icons])
+    .src(config.src.img)
     .pipe(
       plumber(
         notify.onError({
@@ -133,4 +133,4 @@ const createFavicons = () => {
 
 export const imagesBuild = gulp.series(compressImg, toWebp, createFavicons);
 
-export const imagesWatch = () => gulp.watch(config.watch.img, {ignoreInitial: false}, imagesBuild);
+export const imagesWatch = () => gulp.watch(config.watch.img, imagesBuild);
