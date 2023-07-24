@@ -3,8 +3,11 @@
   @@include('./components/head.html', { "title": "Main page" })
   <body>
     <div class="wrapper">
+      <div class="decor decor__main"></div>
       @@include('./components/header/header.html')
-      <main class="main"></main>
+      <main class="main">
+        @@include('./components/home/home.html')
+      </main>
       @@include('./components/footer.html')
     </div>
 

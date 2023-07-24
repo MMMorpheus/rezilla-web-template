@@ -1,9 +1,8 @@
 .header {
-  padding-block: 21px;
+  padding-block: 15px;
 
   &__container {
-    display: flex;
-    justify-content: center;
+    @include flexHCenter;
 
     @media screen and (max-width: $burgerBreakPoint) {
       justify-content: flex-start;
@@ -11,8 +10,8 @@
   }
 
   &__logo {
-    display: flex;
-    align-items: center;
+    @include flexVCenter;
+
     column-gap: 8px;
     margin-inline: auto;
 
@@ -21,11 +20,10 @@
     }
 
     div {
-      display: flex;
+      @include flexAllCenter;
+
       width: 50px;
       height: 50px;
-      align-items: center;
-      justify-content: center;
       border-radius: 50%;
       background-color: $darkBlue;
     }
@@ -39,8 +37,8 @@
   }
 
   &__option {
-    display: flex;
-    align-items: center;
+    @include flexVCenter;
+
     padding: 15px 26px;
     border-radius: 50px;
     column-gap: 10px;
@@ -73,4 +71,3 @@
   background-color: $darkBlue;
   color: white;
 }
-

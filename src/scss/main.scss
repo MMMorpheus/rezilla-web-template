@@ -1,6 +1,11 @@
 // Normalize
 @import 'normalize';
+
+// Mixins
 @import './mixins/**/*';
+
+// Utility classes
+@import './utilityClasses';
 
 // App essentials
 @import 'fonts';

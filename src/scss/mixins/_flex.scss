@@ -1,0 +1,17 @@
+@mixin flexAllCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flexVCenter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+@mixin flexHCenter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

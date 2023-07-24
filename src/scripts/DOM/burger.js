@@ -1,45 +1,32 @@
 import scroll from '../utils/scroll.js';
+import aria from '../utils/aria.js';
 import { elements } from '../app.js';
 
-const openAriaBurger = (burgerEl) => {
-  burgerEl?.setAttribute('aria-expanded', 'true');
-  burgerEl?.setAttribute('aria-label', 'Закрыть меню');
-  scroll.disable();
-};
-
-const closeAriaBurger = (burgerEl) => {
-  burgerEl?.setAttribute('aria-expanded', 'false');
-  burgerEl?.setAttribute('aria-label', 'Открыть меню');
-  scroll.enable();
-};
-
 export default () => {
-  const { burgerEl, menuEl} = elements;
+  const { burgerEl, menuEl } = elements;
 
+  // Handling menu's state by changing classNames
   burgerEl?.addEventListener('click', () => {
     burgerEl.classList.toggle('burger-active');
     menuEl.classList.toggle('menu-active');
 
+    // If is open, handling scroll and aria attr's
     if (menuEl?.classList.contains('menu-active')) {
-      openAriaBurger(burgerEl);
+      aria.open(burgerEl, 'menu');
+      scroll.disable();
+    } else {
+      aria.close(burgerEl, 'menu');
+      scroll.enable();
     }
-    closeAriaBurger(burgerEl);
   });
 
+  // Handling scroll behaviour and aria attr's by click on menu elements
   menuEl.addEventListener('click', (e) => {
-    if(e.target.tagName === "A") {
+    if (e.target.tagName === 'A') {
       burgerEl.classList.remove('burger-active');
       menuEl.classList.remove('menu-active');
-      closeAriaBurger(burgerEl);
+      aria.close(burgerEl, 'menu');
+      scroll.enable();
     }
-  })
-
-  // menuItemsEl?.forEach((el) => {
-  //   el.addEventListener('click', () => {
-  //     burgerEl.classList.remove('burger-active');
-  //     menuEl.classList.remove('menu-active');
-  //     closeAriaBurger(burgerEl);
-  //   });
-  // });
-
+  });
 };

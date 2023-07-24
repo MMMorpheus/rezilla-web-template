@@ -1,0 +1,31 @@
+.home {
+  padding-top: 90px;
+
+  &__container {
+  padding-inline: 60px;
+  }
+
+  &__title {
+    max-width: 540px;
+    margin-top: 30px;
+  }
+
+  // &__subtitle {
+  // }
+
+  &__desc {
+    max-width: 540px;
+    margin-top: 40px;
+  }
+
+  &__slider {
+    width: 540px;
+    height: 340px;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin-top: 40px;
+  }
+
+  // &__form {
+  // }
+}

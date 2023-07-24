@@ -34,7 +34,9 @@ const disableScroll = () => {
   bodyEl.style.top = `-${pagePosition}px`;
 };
 
-export default scroll = {
+const scroll = {
   enable: enableScroll,
   disable: disableScroll,
 };
+
+export default scroll;
