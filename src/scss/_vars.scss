@@ -1,27 +1,30 @@
-@use 'sass:math';
+@use "sass:math";
 
 // Container & Breakpoints
-$containerWidth: 1440;
+$containerWidth: 1200;
 $containerSafePadding: 40;
-$containerInlinePadding: math.div($containerSafePadding, 2);
-$breakpoint1450: 1449.98 + px;
-$breakpoint992: 991.98 + px;
-$breakpoint768: 767.98 + px;
-$breakpoint480: 479.98 + px;
+// $containerInlinePadding: math.div($containerSafePadding, 2);
+$containerInlinePadding: 60px;
+$breakpoint1450: 1449.98px;
+$breakpoint992: 991.98px;
+$breakpoint768: 767.98px;
+$breakpoint480: 479.98px;
+
+// Additional breakpoint
+$layoutBreakpoint: 1151 + px;
 
 // Color schema
-$darkBlue: #3A0CA3;
-$blue: #4361EE;
+$darkBlue: #3a0ca3;
+$blue: #4361ee;
 $lightBlue: #edf0fe;
 $white: white;
 $black: black;
-$menuBlack: #2B2B2B;
-$logoBlack: #1E1E1E;
-$burgerBlack: #0B090A;
+$menuBlack: #2b2b2b;
+$logoBlack: #1e1e1e;
+$burgerBlack: #0b090a;
 $grey: grey;
 $lightGrey: #6d6a7580;
 $selectGrey: #d4d4d433;
-
 
 // Burger
 $burgerBreakPoint: $breakpoint992;
@@ -33,5 +36,15 @@ $fontSecondery: sans-serif;
 // Тут должны быть объявлены переменные для шрифтов и изменения их размера при медиа-запросах
 $bannerFontSize: 13.3 + px;
 
-// Utility vars
+:root {
+  // --headingFontSize: clamp(2.49rem, 1.9506rem + 1.7979vw, 3.58rem);
+  --headingFontSize: clamp(3.06rem, 1.9337rem + 1.8166vw, 3.58rem);
+  --titleFontSize: 39.8px;
+  --descFontSize: 16px;
 
+  @media screen and (max-width: $burgerBreakPoint) {
+    --headingFontSize: clamp(2.19rem, 1.4681rem + 3.4062vw, 3.58rem);
+    // --titleFontSize: clamp(1.725rem, 1.351rem + 1.2466vw, 2.48rem);
+    // --descFontSize: clamp(0.83rem, 0.7458rem + 0.2807vw, 1rem);
+  }
+}

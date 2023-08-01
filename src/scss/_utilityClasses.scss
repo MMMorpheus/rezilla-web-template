@@ -2,6 +2,10 @@
 .flex {
   display: flex;
   flex-wrap: wrap;
+
+ @media screen and (max-width: $burgerBreakPoint) {
+   flex-direction: column;
+ };
 }
 
 %flex {

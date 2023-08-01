@@ -26,9 +26,10 @@ export const stylesBuild = () => {
         })
       )
     )
-    .pipe(replace(/@img\//g, '../img/'))
     .pipe(sassGlob())
     .pipe(sass())
+    .pipe(replace(/@img\//g, '../img/'))
+    .pipe(replace(/@icons\//g, '../img/'))
     .pipe(
       gulpIf(
         config.isProd,

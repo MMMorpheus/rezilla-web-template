@@ -1,31 +1,208 @@
 .home {
   padding-top: 90px;
 
+  @media screen and (max-width: $breakpoint992) {
+    padding-top: between(40px, 90px, $breakpoint480, $breakpoint992);
+  }
+
   &__container {
-  padding-inline: 60px;
+    display: flex;
+    gap: 0 40px;
+
+    @media screen and (max-width: $burgerBreakPoint) {
+      flex-direction: column;
+      gap: 40px 0;
+    }
+  }
+
+  &__content {
+    flex-basis: 50%;
+  }
+
+  &__form {
+    align-self: flex-end;
+    margin-left: auto;
+
+    @media screen and (max-width: $burgerBreakPoint) {
+      align-self: center;
+      margin-left: 0;
+    }
   }
 
   &__title {
-    max-width: 540px;
-    margin-top: 30px;
+    padding-top: 25px;
+
+    @media screen and (max-width: $burgerBreakPoint) {
+      padding-top: 15px;
+    }
   }
 
-  // &__subtitle {
-  // }
-
   &__desc {
-    max-width: 540px;
-    margin-top: 40px;
+    padding-top: 35px;
+
+    @media screen and (max-width: $burgerBreakPoint) {
+      padding-top: 25px;
+    }
   }
 
   &__slider {
-    width: 540px;
-    height: 340px;
-    border: 1px solid black;
-    border-radius: 20px;
-    margin-top: 40px;
+    position: relative;
+    display: block;
+    padding-top: 40px;
+
+    @media screen and (max-width: $breakpoint992) {
+      @include flexAllCenter;
+    }
   }
 
-  // &__form {
-  // }
+  &__testimonials {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media screen and (max-width: $breakpoint480) {
+      flex-direction: column-reverse;
+    };
+
+    > span {
+      margin-top: 118px;
+      color: $grey;
+      font-size: 16px;
+      font-weight: 500;
+
+      @media screen and (max-width: $breakpoint480) {
+        max-width: 60%;
+        order: 1;
+        margin-top: 70px;
+        text-align: center;
+      };
+    }
+  }
+
+  &__highlights {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    gap: 0 30px;
+
+    @media screen and (max-width: $burgerBreakPoint) {
+      flex-direction: column;
+      gap: 28.5px 0;
+    };
+
+    @media screen and (max-width: $breakpoint480) {
+      margin-top: 30px;
+    };
+  }
+}
+
+.highlight {
+  display: inline-flex;
+  max-width: 360px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 37px;
+  border-radius: 50px;
+  background-color: $white;
+  box-shadow: 10px 30px 50px 0 rgb(0 0 0 / 5%);
+  column-gap: 10px;
+
+  @media screen and (max-width: $breakpoint480) {
+    padding: 26px 34px;
+  }
+
+  span {
+    max-width: 122px;
+    font-size: 19.4px;
+    font-weight: 500;
+    text-transform: capitalize;
+  };
+}
+
+.highlight:last-child {
+  span {
+    max-width: 175px;
+  }
+}
+
+%button {
+  position: absolute;
+  z-index: 1;
+  top: calc(50% - 20px);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 10px 10px 40px 0 rgb(0 0 0 / 20%);
+  cursor: pointer;
+
+  @media screen and (max-width: $breakpoint480) {
+    display: none;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  @include flexAllCenter;;
+}
+
+.slider {
+  &__wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  &__body {
+    width: between(442px, 540px, $breakpoint992, $breakpoint1450);
+    height: between(273px, 340px, $breakpoint992, $breakpoint1450);
+    border-radius: 20px;
+    background-color: rgb(0 0 0 / 20%);
+    box-shadow: 10px 10px 40px 0 rgb(0 0 0 / 20%);
+
+    @media screen and (max-width: $burgerBreakPoint) {
+      width: between(333px, 594px, $breakpoint480, $breakpoint992); // scaled to 1.1 from original sizes
+      height: between(200px, 374px, $breakpoint480, $breakpoint992); // scaled to 1.1 from original sizes
+    }
+  }
+
+  &__prev {
+    @extend %button;
+
+    left: -3.7%;
+  }
+
+  &__next {
+    @extend %button;
+
+    right: -3.7%;
+  }
+
+  &__pagination {
+    display: flex;
+    width: between(333px, 540px);
+    justify-content: space-between;
+    margin-top: 11px;
+    padding-inline: 10px;
+  }
+}
+
+.swiper-pagination-bullet {
+  // width: 104px;
+  width: between(82px, 104px, $breakpoint992, $breakpoint1450);
+  height: 6px;
+  border-radius: 10px;
+  background-color: $white;
+  opacity: 0.5;
+
+  @media screen and (max-width: $breakpoint992) {
+    width: between(57px, 114.4px, $breakpoint480, $breakpoint992);
+  }
+
+  &-active {
+    background-color: $blue;
+    opacity: 1;
+  }
 }

@@ -9,14 +9,14 @@
 .menu {
   @media screen and (max-width: $burgerBreakPoint) {
     position: fixed;
+    z-index: 2;
     top: var(--offsetHeight);
     left: 0;
     width: 100%;
     height: calc(100% - var(--offsetHeight));
     backdrop-filter: blur(10px);
-
-    // Specify background and add some filter
     background: rgba($color: white, $alpha: 70%);
+    font-size: 26px;
     transform: translateX(100%);
     transition: transform 0.6s ease-in-out;
   }
@@ -36,10 +36,10 @@
 
   &__item {
     position: relative;
-    padding: 13px 16px;
+    padding: 13px between(13px, 16px, $breakpoint992, $breakpoint1450);
     border-radius: 30px;
     color: $menuBlack;
-    font-size: 16px;
+    font-size: inherit;
     font-weight: 500;
     line-height: normal;
     transition: color 0.3s ease, background-color 0.5s ease;
@@ -91,6 +91,7 @@
 
   &__option:last-child {
     margin-bottom: 45px;
+    font-size: inherit;
   }
 
   &-active {

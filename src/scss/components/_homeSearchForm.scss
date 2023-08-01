@@ -1,27 +1,39 @@
-$formPadding: 40px;
+// :root {
+//   --formInlinePadding: 40px;
+
+//   @media screen and (max-width: $breakpoint992) {
+//     --formInlinePadding: between(20px, 40px, 489.98px, 991.98px);
+//   }
+// }
 
 .form {
-  position: absolute;
-  right: 0;
-  bottom: 0;
+  --formInlinePadding: 40px;
+
   display: inline-block;
-  min-width: 420px;
   max-height: 750px;
-  padding: 11px $formPadding 60px;
+  padding: 11px var(--formInlinePadding) 60px;
   border-radius: 30px;
   background-color: $white;
   box-shadow: 10px 30px 50px 0 rgb(0 0 0 / 5%);
 
+  @media screen and (max-width: $breakpoint992) {
+    // --formInlinePadding: between(20px, 40px, 489.98px, 991.98px);
+    --formInlinePadding: 20px;
+
+    padding-bottom: between(40px, 60px, $breakpoint480, $breakpoint992);
+  }
+
   &__options {
     position: relative;
     display: flex;
+    justify-content: space-evenly;
     column-gap: 40px;
 
     &::before {
       position: absolute;
       bottom: 0;
-      left: calc(0px - $formPadding);
-      width: calc(100% + $formPadding * 2);
+      left: calc(0px - var(--formInlinePadding));
+      width: calc(100% + var(--formInlinePadding) * 2);
       height: 1px;
       background-color: $grey;
       content: "";
@@ -30,12 +42,16 @@ $formPadding: 40px;
 
   &__option {
     display: block;
-    padding: 29px 43px;
+    padding: 29px 35px;
     color: $darkBlue;
     cursor: pointer;
     font-size: 16px;
     font-weight: 500;
     text-transform: capitalize;
+
+    @media screen and (max-width: $breakpoint480) {
+      padding: 20px 25px;
+    }
   }
 
   &__option-indicator {
@@ -56,22 +72,47 @@ $formPadding: 40px;
   &__form {
     width: 100%;
     padding-top: 50px;
+
+    @media screen and (max-width: $breakpoint480) {
+      padding-top: 40px;
+
+    };
   }
 
   &__fields {
+    $inputHeight: 59px;
+    $totalCount: 4;
+    $currentlyDisplayed: 3;
+    $gapValue: 30px;
+    $height: calc(#{($inputHeight + $gapValue) * $currentlyDisplayed} - #{$gapValue});
+
     display: flex;
-    max-height: 237px;
+    max-height: $height; // 237px
     flex-direction: column;
     overflow-y: hidden;
-    row-gap: 30px;
+    row-gap: $gapValue;
     transition: max-height 0.5s ease-in-out;
+
+    @media screen and (max-width: $breakpoint480) {
+      $inputHeight: 50px;
+      $totalCount: 4;
+      $currentlyDisplayed: 3;
+      $gapValue: 20px;
+      $height: calc(#{($inputHeight + $gapValue) * $currentlyDisplayed} - #{$gapValue});
+
+      max-height: $height;
+      row-gap: $gapValue;
+    }
 
     &--expanded {
       max-height: 326px;
     }
 
     select {
-      height: 59px;
+      $inputHeight: 59px;
+
+      width: between(315px, 340px, $breakpoint992, $breakpoint1450);
+      height: $inputHeight;
       flex-shrink: 0;
       border: 0;
       border-radius: 20px;
@@ -80,15 +121,27 @@ $formPadding: 40px;
       cursor: pointer;
       font-size: 16px;
       font-weight: 400;
+      line-height: 26px;
       padding-inline: 20px;
       text-transform: capitalize;
+
+      @media screen and (max-width: $breakpoint992) {
+        width: between(290px, 340px, $breakpoint480, $breakpoint992);
+      }
+
+      @media screen and (max-width: $breakpoint480) {
+        $inputHeight: 50px;
+
+        height: $inputHeight;
+        border-radius: 15px;
+      }
     }
   }
 
   &__extra {
     @include flexVCenter;
 
-    display: inline-flex;
+    display: flex;
     margin-top: 20px;
     color: $black;
     column-gap: 10px;
@@ -110,14 +163,20 @@ $formPadding: 40px;
     @include resetBtn;
     @include flexAllCenter;
 
-    width: 100%;
     border-radius: 50px;
-    margin: 60px auto 0;
+    margin: between(52px, 60px, $breakpoint992, $breakpoint1450) auto 0;
     background: $darkBlue;
     color: $white;
     column-gap: 10px;
     font-weight: 500;
-    padding-block: 20px;
+    padding-block: between(20.2px, 25px, $breakpoint992, $breakpoint1450);
+    padding-inline: between(110.5px, 120px, $breakpoint992, $breakpoint1450);
     text-transform: capitalize;
+
+    @media screen and (max-width: $breakpoint992) {
+      margin-top: between(43px, 60px, $breakpoint480, $breakpoint992);
+      padding-block: between(15px, 25px, $breakpoint480, $breakpoint992);
+      padding-inline: between(100px, 120px, $breakpoint480, $breakpoint992);
+    }
   }
 }

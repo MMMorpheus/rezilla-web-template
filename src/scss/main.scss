@@ -1,16 +1,15 @@
-// Normalize
+// Settings
 @import 'normalize';
-
-// Mixins
 @import './mixins/**/*';
-
-// Utility classes
-@import './utilityClasses';
+@import 'vars';
+@import 'functions';
 
 // App essentials
 @import 'fonts';
-@import 'vars';
 @import 'global';
+
+// Utility classes
+@import 'utilityClasses';
 
 // App components
 @import "./components/**/*";

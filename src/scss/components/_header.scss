@@ -39,7 +39,7 @@
   &__option {
     @include flexVCenter;
 
-    padding: 15px 26px;
+    padding: 15px between(15px, 26px, $breakpoint992, $breakpoint1450);
     border-radius: 50px;
     column-gap: 10px;
     cursor: pointer;

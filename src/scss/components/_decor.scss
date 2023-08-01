@@ -1,12 +1,38 @@
-.decor {
+%decor {
   position: absolute;
+  z-index: -1;
+}
 
+.decor {
   &__main {
-    z-index: -1;
+    @extend %decor;
+
     top: var(--offsetHeight);
-    width: 100%;
+    width: 100vw;
     height: 902px;
     border-radius: 0 0 800px 800px;
     background: linear-gradient(180deg, rgb(76 201 240 / 0%) 0%, rgb(67 97 238 / 30%) 100%);
+  }
+
+  &__marquee {
+    @extend %decor;
+
+    top: 50%;
+    left: 15%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, $blue 0%, rgb(67 97 238 / 0%) 100%);
+    opacity: 0.5;
+    transform: rotate(-30deg);
+
+    @media screen and (max-width: $burgerBreakPoint) {
+      top: 60%;
+      left: 10%;
+    }
+
+    @media screen and (max-width: $breakpoint768) {
+      display: none;
+    }
   }
 }

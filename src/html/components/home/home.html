@@ -1,17 +1,37 @@
 <section class="home">
   <div class="home__container">
-    <div class="flex">
-      <div class="flex-bs50">
-        <h3 class="home__subtitle subtitle">real estate</h3>
-        <h1 class="home__title main-title">Find a perfect home you love..!</h1>
-        <p class="home__desc desc">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias facere a, ratione
-          pariatur natus quam iste voluptate fugit dolores? Nam?
-        </p>
-        @@include('./homeSlider.html')
-      </div>
-      <div class="flex-bs50 p-rel">@@include('./homeForm.html')</div>
+    <!-- Content -->
+    <div class="home__content">
+      <h3 class="home__subtitle subtitle">real estate</h3>
+      <h1 class="home__title heading">Find a perfect home you love..!</h1>
+      <p class="home__desc desc">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias facere a, ratione
+        pariatur natus quam iste voluptate fugit dolores? Nam?
+      </p>
+      <!-- Slider -->
+      @@include('./homeSlider.html')
     </div>
-    <div class="home__testimonials"></div>
+    <!-- Form -->
+    <div class="home__form">@@include('./homeForm.html')</div>
+  </div>
+  <!-- Testimonials -->
+  <div class="home__testimonials">
+    <div class="decor__marquee"></div>
+    <div class="home__highlights">
+      <div class="highlight">
+        <img
+          src="@img/highlight.png"
+          alt="Happy customers faces" />
+        <span>72+ happy customers</span>
+      </div>
+      <div class="highlight">
+        <img
+          src="@img/home.png"
+          alt="Home thumb" />
+        <span>200+ new listings every day</span>
+      </div>
+    </div>
+    <span>Trusted by 100+ Companies across the globe!</span>
+    @@include('../../components/marquee.html')
   </div>
 </section>
