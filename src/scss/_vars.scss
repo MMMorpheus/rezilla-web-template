@@ -1,9 +1,6 @@
-@use "sass:math";
-
 // Container & Breakpoints
 $containerWidth: 1200;
 $containerSafePadding: 40;
-// $containerInlinePadding: math.div($containerSafePadding, 2);
 $containerInlinePadding: 60px;
 $breakpoint1450: 1449.98px;
 $breakpoint992: 991.98px;
@@ -37,14 +34,15 @@ $fontSecondery: sans-serif;
 $bannerFontSize: 13.3 + px;
 
 :root {
-  // --headingFontSize: clamp(2.49rem, 1.9506rem + 1.7979vw, 3.58rem);
   --headingFontSize: clamp(3.06rem, 1.9337rem + 1.8166vw, 3.58rem);
-  --titleFontSize: 39.8px;
-  --descFontSize: 16px;
+  --titleFontSize:  clamp(1.875rem, 0.5186rem + 2.1878vw, 2.4875rem);
+  --subtitleFontSize: clamp(1.1125rem, 0.8909rem + 0.3574vw, 1.2125rem);
+  --descFontSize: clamp(0.92rem, 0.7429rem + 0.2857vw, 1rem);
 
   @media screen and (max-width: $burgerBreakPoint) {
     --headingFontSize: clamp(2.19rem, 1.4681rem + 3.4062vw, 3.58rem);
-    // --titleFontSize: clamp(1.725rem, 1.351rem + 1.2466vw, 2.48rem);
-    // --descFontSize: clamp(0.83rem, 0.7458rem + 0.2807vw, 1rem);
+    --titleFontSize:  clamp(1.725rem, 1.1172rem + 2.2101vw, 2.4875rem);
+    --subtitleFontSize: clamp(1rem, 0.8007rem + 0.6643vw, 1.2125rem);
+    --descFontSize:  clamp(0.83rem, 0.6706rem + 0.5313vw, 1rem);
   }
 }

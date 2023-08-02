@@ -83,7 +83,7 @@ body {
 
 .subtitle {
   color: $blue;
-  font-size: 19.4px;
+  font-size: var(--subtitleFontSize);
   font-weight: 500;
   letter-spacing: 2.91px;
   text-transform: uppercase;
@@ -94,4 +94,8 @@ body {
   font-size: var(--descFontSize);
   font-weight: 400;
   line-height: 26px;
+
+  @media screen and (max-width: $breakpoint480) {
+    line-height: 22px;
+  };
 }
