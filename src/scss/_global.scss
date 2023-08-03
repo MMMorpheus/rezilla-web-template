@@ -1,6 +1,7 @@
 // Body
 body {
   font-family: $fontPrimary, $fontSecondery;
+  line-height: 100%;
 
   // Отключен горизонтальный скролл чтоб не ломал сайт, когда меню-бургер спрятано за пределами страницы
   overflow-x: hidden;

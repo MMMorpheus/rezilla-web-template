@@ -1,0 +1,100 @@
+.services {
+  margin-top: 200px;
+  background-color: $selectGrey;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 0 between(100px, 137px);
+  }
+
+  &__subtitle {
+    color: $menuBlack;
+  }
+
+  &__title {
+    padding-top: 40px;
+    padding-inline: 20px;
+    text-align: center;
+  }
+
+  &__cards {
+    display: flex;
+    padding-top: between(50px, 70px);
+    gap: 0 between(42.5px, 50px, $breakpoint992, $breakpoint1450);
+
+    @media screen and (max-width: $breakpoint992) {
+      flex-direction: column;
+      gap: between(30px, 50px, $breakpoint992, $breakpoint1450) 0;
+    };
+  }
+}
+
+.card {
+  @include flexAllCenter;
+
+  max-width: between(289px, 340px, $breakpoint992, $breakpoint1450);
+  flex-direction: column;
+  padding: between(51px, 60px, $breakpoint992, $breakpoint1450);
+  border-radius: 30px;
+  background-color: $white;
+
+  @media screen and (max-width: $breakpoint992) {
+    max-width: between(333px, 399px, $breakpoint480, $breakpoint992);
+    padding: between(40px, 60px, $breakpoint480, $breakpoint992) between(35px, 60px, $breakpoint480, $breakpoint992);
+  };
+
+  &__icon {
+    width: 90px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    background-color: $blue;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40px;
+    color: white;
+    filter: drop-shadow(4px 10px 30px rgb(67 97 238 / 40%));
+
+    @media screen and (max-width: $breakpoint992) {
+      width: between(60px, 90px, $breakpoint480, $breakpoint992);
+      background-size: between(26px, 40px, $breakpoint480, $breakpoint992);
+    };
+  }
+
+  &__title {
+    padding-top: 20px;
+    font-size: between(16.5px, 19.4px, $breakpoint992, $breakpoint1450);
+    font-weight: 500;
+
+    @media screen and (max-width: $breakpoint992) {
+      padding-top: between(15px, 20px, $breakpoint480, $breakpoint992);
+      font-size: between(16px, 19.4px, $breakpoint480, $breakpoint992);
+    };
+  }
+
+  &__desc {
+    padding-top: 10px;
+    text-align: center;
+
+    @media screen and (max-width: $breakpoint992) {
+      padding-top: between(5px, 10px, $breakpoint480, $breakpoint992);
+    };
+
+    @media screen and (max-width: $breakpoint480) {
+      max-width: 77%;
+    };
+  }
+}
+
+.icon-1 {
+  background-image: url("@icons/search_big.svg");
+}
+
+.icon-2 {
+  background-image: url("@icons/home.svg");
+}
+
+.icon-3 {
+  background-image: url("@icons/bed.svg");
+}
