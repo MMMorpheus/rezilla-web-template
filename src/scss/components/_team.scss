@@ -1,0 +1,89 @@
+.team {
+  padding-bottom: between(100px, 180px);
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  &__title {
+    padding-top: 20px;
+  }
+
+  &__cards {
+    display: grid;
+    width: 100%;
+    padding-top: between(40px, 100px);
+    gap: between(50px, 70px);
+    grid-template-columns: repeat(4, 1fr);
+
+    @media screen and (max-width: $breakpoint992) {
+      grid-template-columns: repeat(auto-fit, minmax(between(120px, 200px), 1fr));
+    }
+  }
+}
+
+.tCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  filter: grayscale(1);
+  transition: scale 0.5s ease, box-shadow 0.5s ease, scale 0.5s ease;
+
+  @media (pointer: coarse) {
+    filter: grayscale(0);
+  }
+
+  &:hover {
+    @media (hover: hover) {
+      filter: grayscale(0);
+      scale: 1.05;
+    }
+  }
+
+  &:hover .tCard__img {
+    @media (hover: hover) {
+      box-shadow: 4px 10px 30px 0 rgb(0 0 0 / 6%);
+    }
+  }
+
+  &__img { //stylelint-disable-line
+    width: between(120px, 200px);
+    height: between(168px, 280px);
+    border-radius: 120px 40px 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__name {
+    font-size: between(15px, 27.6px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    padding-block: between(15px, 30px);
+    text-align: center;
+  }
+
+  &__role {
+    color: $blue;
+    text-align: center;
+  }
+}
+
+.img-1 {
+  background-image: url("@img/team-1.jpg");
+}
+
+.img-2 {
+  background-image: url("@img/team-2.jpg");
+}
+
+.img-3 {
+  background-image: url("@img/team-3.jpg");
+}
+
+.img-4 {
+  background-image: url("@img/team-4.jpg");
+}

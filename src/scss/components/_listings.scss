@@ -1,7 +1,131 @@
 .listings {
-  padding-top: 200px;
+  padding-top: between(100px, 200px);
 
-  &__contsiner {
+  &__container {
+    display: grid;
+    gap: 0 35px;
+    grid-template-columns: 1fr auto;
 
+    @media screen and (max-width: $breakpoint768) {
+      gap: 35px 0;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // &__content {
+  // }
+
+  &__tabsBtns {
+    place-self: center;
+  }
+
+  &__tabsContent {
+    margin-top: 50px;
+    grid-column: 1 / span 2;
+
+    @media screen and (max-width: $breakpoint768) {
+      margin-top: 0;
+      grid-column: 1;
+    }
+  }
+
+  // &__subtitle {
+  // }
+
+  &__title {
+    padding-top: between(10px, 25px);
+  }
+
+  &__desc {
+    padding-top: between(10px, 25px);
+  }
+
+  &__tabBtn {
+    @include resetBtn;
+
+    padding: 14px 26px;
+    border: 1px solid $darkBlue;
+    border-radius: 30px;
+    color: $darkBlue;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &--active {
+      background-color: $darkBlue;
+      color: $white;
+      pointer-events: none;
+    }
+  }
+
+  &__tabBtn:not(:last-child) {
+    margin-right: 18px;
+  }
+}
+
+.tabs {
+  &__wrapper {
+    position: relative;
+    display: flex;
+    padding-bottom: 80vh;
+  }
+
+  &__track {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    gap: 0 50px;
+
+    // overflow-x: hidden
+
+    &::after {
+      flex-grow: 1;
+      content: "";
+    }
+  }
+
+  &__card {
+    @include flexHStart;
+
+    cursor: pointer;
+  }
+
+  &__img {
+    overflow: hidden;
+    width: 340px;
+    border-radius: 30px;
+    aspect-ratio: 1/1;
+    background: linear-gradient(180deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 50%) 100%);
+
+    &:hover img {
+      @media (hover: hover) {
+        transform: scale(1.15);
+      }
+    }
+
+    img {
+      scale: 1;
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  &__price {
+    padding-top: 25px;
+    color: $menuBlack;
+    font-size: 27.6px;
+    font-weight: 600;
+  }
+
+  &__title {
+    padding-top: 20px;
+    color: $menuBlack;
+    font-size: 19.4px;
+    font-weight: 500;
+  }
+
+  &__place {
+    padding-top: 10px;
+    color: $grey;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
   }
 }

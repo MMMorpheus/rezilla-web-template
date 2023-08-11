@@ -1,7 +1,8 @@
-<div class="home__slider slider">
-  <!-- Slider itself -->
-  <div class="slider__wrapper">
-    <div class="swiper slider__body">
+<div class="home__slider hSlider" >
+  <!-- An additional wrapper to position absolutly control btns -->
+  <div class="hSlider__wrapper">
+    <!-- The slider itself -->
+    <div class="swiper hSlider__body" data-slider="home">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <img
@@ -25,9 +26,9 @@
         </div>
       </div>
     </div>
-    <!-- Prev -->
+    <!-- Prev btn -->
     <div
-      class="slider__prev"
+      class="hSlider__prev"
       role="button">
       <img
         src="@icons/arrow_left.svg"
@@ -35,9 +36,9 @@
         height="20"
         alt="Prev button" />
     </div>
-    <!-- Next -->
+    <!-- Next btn -->
     <div
-      class="slider__next"
+      class="hSlider__next"
       role="button">
       <img
         src="@icons/arrow_right.svg"
@@ -46,6 +47,6 @@
         alt="Next button" />
     </div>
     <!-- Pagination -->
-    <div class="slider__pagination"></div>
+    <div class="hSlider__pagination"></div>
   </div>
 </div>

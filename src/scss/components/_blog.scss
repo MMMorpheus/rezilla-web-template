@@ -1,0 +1,167 @@
+.blog {
+  background-color: $darkBlue;
+  padding-block: 100px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__subtitle {
+    color: $white;
+  }
+
+  &__title {
+    padding-top: 25px;
+    color: $white;
+  }
+
+  &__layout {
+    width: 100%;
+    margin-top: between(30px, 80px);
+  }
+}
+
+.bSlider {
+  &__wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  &__link {
+    display: inline-flex;
+    max-width: min-content;
+    min-height: between(486px, 540px, $breakpoint992);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    color: $white;
+    text-decoration: none;
+
+    @media screen and (max-width: $breakpoint992) {
+      min-height: between(486px, 540px, $breakpoint768, $breakpoint992);
+    };
+
+    &:hover .bSlider__img img { // stylelint-disable-line
+      @media (hover:hover) {
+        scale: 1.1
+      }
+    };
+  }
+
+  &__img {
+    overflow: hidden;
+    width: between(272px, 340px, $breakpoint992); // -20% down to mx-w992
+    height: between(192px, 240px, $breakpoint992);
+    border-radius: 30px;
+    box-shadow: 10px 10px 30px 0 rgb(0 0 0 / 20%);
+
+    @media screen and (max-width: $breakpoint992) {
+      width: between(306px, 340px, $breakpoint768, $breakpoint992); // -10% down to mx-w768
+      height: between(216px, 240px, $breakpoint768, $breakpoint992);
+    }
+
+    @media screen and (max-width: $breakpoint768) {
+      width: between(333px, 340px, $breakpoint480, $breakpoint768); // -10% down to mx-w480
+      height: between(200px, 240px, $breakpoint480, $breakpoint768);
+    }
+
+    img { // stylelint-disable-line
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: scale .3s ease;
+    }
+  }
+
+  &__title {
+    padding-top: 25px;
+    font-size: between(22.08px, 27.6px, $breakpoint992);
+    font-weight: 500;
+    line-height: normal;
+
+    @media screen and (max-width: $breakpoint992) {
+      font-size: between(24.84px, 27.6px, $breakpoint768, $breakpoint992);
+    }
+
+    @media screen and (max-width: $breakpoint768) {
+      font-size: between(19.4px, 27.6px, $breakpoint480, $breakpoint768);
+    }
+  }
+
+  &__desc {
+    padding-top: 15px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+
+    @media screen and (max-width: $breakpoint768) {
+      font-size: between(13.3px, 16px, $breakpoint480, $breakpoint768);
+    }
+  }
+
+  &__followBtn {
+    @include resetBtn;
+
+    width: 50px;
+    height: 50px;
+    align-self: end;
+    border-radius: 50%;
+    margin-top: auto;
+    background-color: $white;
+    background-image: url("@icons/arrow-right-blog.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px;
+  }
+
+  // Controls
+  &__prev {
+    @extend %navigationBtn;
+
+    left: 0;
+    translate: -100% -50%;
+  }
+
+  &__next {
+    @extend %navigationBtn;
+
+    right: 0;
+    translate: 100% -50%;
+  }
+}
+
+%navigationBtn {
+  @include resetBtn;
+
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+
+  @media screen and (max-width: $breakpoint992) {
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+
+  @media screen and (max-width: $breakpoint768) {
+    display: none;
+  }
+
+  &:active {
+    scale: 0.98;
+  }
+
+  svg {
+    fill: $white;
+  }
+}
+
+.swiper-slide-center {
+  display: flex;
+  justify-content: center;
+}

@@ -58,6 +58,7 @@
       "always",
       { "except": ["first-nested", "after-comment", "after-dollar-variable"] }
     ],
-    "scss/at-mixin-pattern": "[a-z]+((\\d)|([A-Z0-9][a-z0-9]+))*([A-Z])?"
+    "scss/at-mixin-pattern": "[a-z]+((\\d)|([A-Z0-9][a-z0-9]+))*([A-Z])?",
+    "scss/percent-placeholder-pattern": "[a-z]+((\\d)|([A-Z0-9][a-z0-9]+))*([A-Z])?"
   }
 }

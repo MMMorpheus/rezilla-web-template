@@ -1,5 +1,5 @@
 .home {
-  padding-top: 90px;
+  padding-top: between(50px, 70px);
 
   @media screen and (max-width: $breakpoint992) {
     padding-top: between(40px, 90px, $breakpoint480, $breakpoint992);
@@ -46,9 +46,7 @@
   }
 
   &__slider {
-    position: relative;
-    display: block;
-    padding-top: 40px;
+    margin-top: 40px;
 
     @media screen and (max-width: $breakpoint992) {
       @include flexAllCenter;
@@ -149,7 +147,7 @@
   @include flexAllCenter;
 }
 
-.slider {
+.hSlider {
   &__wrapper {
     position: relative;
     display: inline-block;
@@ -163,8 +161,8 @@
     box-shadow: 10px 10px 40px 0 rgb(0 0 0 / 20%);
 
     @media screen and (max-width: $burgerBreakPoint) {
-      width: between(333px, 594px, $breakpoint480, $breakpoint992); // scaled to 1.1 from original sizes
-      height: between(200px, 374px, $breakpoint480, $breakpoint992); // scaled to 1.1 from original sizes
+      width: between(333px, 648px, $breakpoint480, $breakpoint992); // scaled to 1.2 from original sizes
+      height: between(200px, 408px, $breakpoint480, $breakpoint992); // scaled to 1.2 from original sizes
     }
   }
 
