@@ -5,65 +5,65 @@ import { elements } from '../app.js';
 import blogs from '../Data/blogs.json';
 
 export default () => {
-  const { homeSliderEl, blogLayoutEl } = elements;
+  const { homeSliderEl, blogSection, blogArticlesWrapper } = elements;
+  // Defining slider variable
+  let blogsSlider;
 
-  function createBlogSliderLayout(cssClass) {
-    return `
-    <div class="${cssClass}__wrapper">
-      <div class="swiper" data-slider="blog">
-        <div class="swiper-wrapper">
-        ${blogs
-          .map((el, i) => {
-            return `<div class="swiper-slide swiper-slide-center">
-              <a href="#" class="${cssClass}__link">
-                <div class="${cssClass}__img">
-                  <img src="${el.imgUrl}" alt="slide image" >
-                </div>
-                <span class="${cssClass}__title">${el.title}</span>
-                <span class="${cssClass}__desc">${el.desc}</span>
-                <button class="${cssClass}__followBtn"></button>
-              </a>
-            </div>`;
-          })
-          .join('')}
-        </div>
-      </div>
-      <button class="${cssClass}__prev">
-          <?xml version="1.0" ?><svg
-            viewBox="0 0 96 96"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M39.3756,48.0022l30.47-25.39a6.0035,6.0035,0,0,0-7.6878-9.223L26.1563,43.3906a6.0092,6.0092,0,0,0,0,9.2231L62.1578,82.615a6.0035,6.0035,0,0,0,7.6878-9.2231Z" />
-          </svg>
-        </button>
-        <button class="${cssClass}__next">
-          <?xml version="1.0" ?><svg
-            viewBox="0 0 96 96"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M69.8437,43.3876,33.8422,13.3863a6.0035,6.0035,0,0,0-7.6878,9.223l30.47,25.39-30.47,25.39a6.0035,6.0035,0,0,0,7.6878,9.2231L69.8437,52.6106a6.0091,6.0091,0,0,0,0-9.223Z" />
-          </svg>
-        </button>
-    </div
-    `;
+  function handleLayout() {
+    // Gaining articles
+    const articles = Array.from(blogArticlesWrapper.querySelectorAll('.articles__link'));
+    console.log(articles)
+
+    if (document.documentElement.clientWidth > 768) {
+      if (!blogsSlider) {
+        const slider = createBlogSliderLayout(articles);
+        blogArticlesWrapper.append(slider);
+        // Slider initialization
+        blogsSlider = initBlogSlider('[data-slider="blog"]');
+      }
+      return ;
+    } else {
+      if (blogsSlider) {
+        console.log('mobile, slider need to destroy');
+        blogsSlider.disable();
+        blogsSlider.destroy(true, true);
+        blogsSlider = null;
+        // Replacing slides to articles
+        blogArticlesWrapper.innerHTML = '';
+        articles.forEach(el => blogArticlesWrapper.append(el));
+        // Сompensate for scroll to avoid UI jumping
+        window.scrollTo({
+          top: blogSection.getBoundingClientRect().top + window.scrollY
+        })
+
+      }
+      return;
+    }
   }
 
-  function createBlogLayout(cssClass) {
-    return `
-    <div class="${cssClass}__wrapper">
-        ${blogs
-          .map((el, i) => {
-            return `<a href="#" class="${cssClass}__link">
-                <div class="${cssClass}__img">
-                  <img src="${el.imgUrl}" alt="slide image" >
-                </div>
-                <span class="${cssClass}__title">${el.title}</span>
-                <span class="${cssClass}__desc">${el.desc}</span>
-              </a>`;
-          })
-          .join('')}
-    </div
-    `;
+  function createBlogSliderLayout(elemsToSlides) {
+    // Swiper
+    const swiper = document.createElement('div');
+    swiper.className = 'swiper';
+    swiper.dataset.slider = 'blog';
+    // Swiper-wrapper
+    const swiperWrapper = document.createElement('div');
+    swiperWrapper.className = 'swiper-wrapper';
+    // Slides
+    const slides = elemsToSlides.map((el) => {
+      const swiperSlide = document.createElement('div');
+      swiperSlide.className = 'swiper-slide';
+      swiperSlide.append(el);
+      return swiperSlide;
+    });
+    // Appending slides to swiper-wrapper
+    slides.forEach((slide) => {
+      swiperWrapper.append(slide);
+    });
+    // Appending swiper-wrapper to swiper
+    swiper.append(swiperWrapper);
+
+    return swiper;
   }
 
   function initHomeSlider() {
@@ -93,15 +93,15 @@ export default () => {
       },
       loop: true,
     });
+    return homeSlider;
   }
 
   function initBlogSlider(container) {
-    console.log(container);
     return new Swiper(container, {
       modules: [Navigation, Pagination],
       navigation: {
-        nextEl: '.bSlider__next',
-        prevEl: '.bSlider__prev',
+        nextEl: '.articles__next',
+        prevEl: '.articles__prev',
       },
       speed: 850,
       slidesPerView: 3,
@@ -120,27 +120,13 @@ export default () => {
     });
   }
 
-  function handleLayout() {
-    let blogSlider;
-    // Layout strings
-    const sliderLayout = createBlogSliderLayout('bSlider');
-    const blogLayout = createBlogLayout('bSlider');
-
-    if (window.innerWidth > 768) {
-      blogLayoutEl.replaceChildren();
-      blogLayoutEl.insertAdjacentHTML('beforeend', sliderLayout)
-      blogSlider = initBlogSlider(blogLayoutEl.querySelector('[data-slider="blog"]'));
-    } else {
-      // Remove the Swiper slider instance
-      if(blogSlider) {
-        blogSlider.disable();
-        blogSlider.destroy(true, true)
-        blogSlider = null;
-      }
-      blogLayoutEl.replaceChildren();
-      blogLayoutEl.insertAdjacentHTML('beforeend', blogLayout)
-    }
-  }
-
   return { initHomeSlider, handleLayout };
 };
+
+// Контент доступный для всех, кто не использует JS => есть изначальная разметка в ввиде статей для блога
+// 1. Построение разметки для слайдера:
+//     1.1. Получить коллекцию слайдов, сохранить копию для того, чтобы вернуть ее при ресайзе
+//     1.2. На основе коллекции построить разметку для слайдера
+//     1.3. Проверять на ширину окна и дополнительно на уже вставленную размеку, чтобы замещать ее
+// 2. Вставить разметку и проинициализировать слайдер
+// 3. Повесить событие ресайз для окна и вызывать функцию

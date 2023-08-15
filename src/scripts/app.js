@@ -10,7 +10,8 @@ const formEl = document.querySelector('[data-form]');
 const circleTextEl = document.querySelector('[data-circle]');
 const tabtBtnsEl = document.querySelectorAll('[data-tabBtn]');
 const homeSliderEl = document.querySelector('[data-slider="home"]');
-const blogLayoutEl = document.querySelector('.blog__layout')
+const blogSection = document.querySelector('.blog');
+const blogArticlesWrapper = document.querySelector('.articles__wrapper');
 
 export const elements = {
   burgerEl,
@@ -20,7 +21,8 @@ export const elements = {
   circleTextEl,
   tabtBtnsEl,
   homeSliderEl,
-  blogLayoutEl,
+  blogSection,
+  blogArticlesWrapper,
 };
 
 // DOM manipulation
@@ -34,10 +36,11 @@ import tabSlider from './DOM/tabSlider.js';
 
 
 documentReady(() => {
-
   // Тут исполняем скрипты
   const { initHomeSlider, handleLayout } = sliders();
-  // blogLayoutEl.insertAdjacentHTML('beforeend', handleLayout())
+
+// For test needs
+// createSliderLayout()
 
   menu();
   burger();
@@ -50,9 +53,10 @@ documentReady(() => {
   initHomeSlider();
   handleLayout()
 
+  const throttled = throttle(handleLayout, 500)
 
   // Тротлим инициализацию слайдера, если окно ресайзится, чтобы отключать слайдер на мобилках
-  window.addEventListener('resize', throttle(handleLayout, 500));
+  window.addEventListener('resize', throttled);
 
-  // For test needs
+
 });
