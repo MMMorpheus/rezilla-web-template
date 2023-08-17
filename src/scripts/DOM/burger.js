@@ -3,7 +3,7 @@ import aria from '../utils/aria.js';
 import { elements } from '../app.js';
 
 export default () => {
-  const { burgerEl, menuEl } = elements;
+  const { burgerEl, menuEl, menuItemsEl } = elements;
 
   // Handling menu's state by changing classNames
   burgerEl?.addEventListener('click', () => {
@@ -22,11 +22,26 @@ export default () => {
 
   // Handling scroll behaviour and aria attr's by click on menu elements
   menuEl.addEventListener('click', (e) => {
+    // Preventing default link begavior
+    e.preventDefault();
+    // Highligting menu list elements
+    menuItemsEl?.forEach((li) => {
+      li.classList.remove('menu__item-active');
+    });
+    e.target.parentElement.classList.add('menu__item-active');
+    // Toggling burger
     if (e.target.tagName === 'A') {
       burgerEl.classList.remove('burger-active');
       menuEl.classList.remove('menu-active');
       aria.close(burgerEl, 'menu');
       scroll.enable();
     }
+    // Scroll
+    const targetEl = document.querySelector(e.target.dataset.target)
+    const scrollDistance = targetEl.getBoundingClientRect().top + window.scrollY - document.querySelector('.header').offsetHeight;
+    console.log(scrollDistance)
+    window.scrollTo({
+      top: scrollDistance
+    })
   });
 };

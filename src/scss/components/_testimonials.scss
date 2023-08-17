@@ -1,0 +1,202 @@
+.testimonials {
+  padding: 200px 0 70px;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (max-width: $breakpoint992) {
+      flex-direction: column;
+    }
+  }
+
+  &__slides {
+    position: relative;
+
+    @media screen and (min-width: $breakpoint992) {
+      height: 450px;
+      overflow-y: hidden;
+    }
+
+    @media screen and (max-width: $breakpoint992) {
+      padding-top: 30px;
+    };
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__pagination {
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    width: auto !important;
+    gap: 0 10px;
+    translate: (-50% 0);
+
+    @media screen and (min-width: $breakpoint992) {
+      top: 40% !important;
+      flex-direction: column;
+      gap: 10px 0;
+    }
+
+    @media screen and (max-width: $breakpoint992) {
+      bottom: 0;
+      left: 50% !important;
+    }
+  }
+
+  &__bullet {
+    width: 40px;
+    height: 3px;
+    padding: 3px;
+    border-radius: 5px;
+    background-color: rgb(214 214 214);
+    cursor: pointer;
+
+    @media screen and (min-width: $breakpoint992) {
+      width: 3px;
+      height: 40px;
+    }
+  }
+
+  &__bullet-active {
+    background-color: $grey;
+  }
+
+  &__title {
+    max-width: 70%;
+    padding-top: 20px;
+
+    @media screen and (max-width: $breakpoint992) {
+      max-width: unset;
+    }
+  }
+
+  &__desc {
+    max-width: 70%;
+    padding-top: 20px;
+
+    @media screen and (max-width: $breakpoint992) {
+      max-width: unset;
+    }
+  }
+
+  &__controls {
+    display: inline-flex;
+    padding-top: 60px;
+    column-gap: 50px;
+
+    @media screen and (max-width: $breakpoint992) {
+      display: none;
+    }
+  }
+
+  &__btn {
+    @include resetBtn;
+
+    &:active {
+      scale: 0.95;
+    }
+  }
+}
+
+.tesPrev {
+  left: -25px;
+}
+
+.tesNext {
+  right: -25px;
+}
+
+.comment {
+  position: relative;
+  height: auto;
+  padding: 30px;
+
+  &__decor {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 15px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #4361ee 0%, rgb(67 97 238 / 0%) 100%);
+    opacity: 0.5;
+  }
+
+  &__body {
+    max-width: 500px;
+    padding: 90px between(20px, 50px) 28px;
+    border-radius: 30px;
+    background-color: $white;
+    background-image: url("../img/quotes.svg");
+    background-position: 60px 50px;
+    background-repeat: no-repeat;
+    box-shadow: 10px 10px 30px 0 rgb(0 0 0 / 10%);
+
+    @media screen and (max-width: $breakpoint768) {
+      max-width: unset;
+    }
+  }
+
+  &__text {
+    padding: 0 10px 20px;
+    border-bottom: 1.5px solid $selectGrey;
+    color: $menuBlack;
+    font-size: between(16px, 19.4px, $breakpoint992);
+    font-weight: 500;
+
+    @media screen and (max-width: $breakpoint992) {
+      padding-bottom: 10px;
+      font-size: between(14px, 16px, $breakpoint768, $breakpoint992);
+    }
+  }
+
+  &__author {
+    display: grid;
+    align-items: center;
+    padding-top: between(10px, 20px, $breakpoint992);
+    column-gap: 15px;
+    grid-template-columns: auto max-content 1fr;
+
+    @media screen and (max-width: $breakpoint992) {
+      grid-template-columns: auto 1fr;
+    };
+  }
+}
+
+.author {
+  &__img {
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
+
+    @media screen and (max-width: $breakpoint992) {
+      grid-row: span 2;
+    };
+  }
+
+  &__name {
+    font-size: between(16px, 19.4px, $breakpoint992);
+    font-weight: 500;
+
+    @media screen and (max-width: $breakpoint992) {
+      font-size: between(14px, 16px, $breakpoint768, $breakpoint992);
+    }
+  }
+
+  &__rate {
+    margin-left: auto;
+
+    @media screen and (max-width: $breakpoint992) {
+      margin-left: unset;
+    };
+  }
+}

@@ -10,8 +10,11 @@ const formEl = document.querySelector('[data-form]');
 const circleTextEl = document.querySelector('[data-circle]');
 const tabtBtnsEl = document.querySelectorAll('[data-tabBtn]');
 const homeSliderEl = document.querySelector('[data-slider="home"]');
+const testimonialsSliderEl = document.querySelector('[data-slider="testimonials"]');
+console.log(testimonialsSliderEl)
 const blogSection = document.querySelector('.blog');
 const blogArticlesWrapper = document.querySelector('.articles__wrapper');
+const blogArticlesBtnEl = document.querySelector('.blog__showMoreBtn');
 
 export const elements = {
   burgerEl,
@@ -23,10 +26,10 @@ export const elements = {
   homeSliderEl,
   blogSection,
   blogArticlesWrapper,
+  blogArticlesBtnEl,
 };
 
 // DOM manipulation
-import menu from './DOM/menu.js';
 import burger from './DOM/burger.js';
 import form from './DOM/form.js';
 import marquee from './DOM/marquee.js';
@@ -34,29 +37,22 @@ import sliders from './DOM/sliders.js';
 import circleText from './DOM/circleText.js';
 import tabSlider from './DOM/tabSlider.js';
 
-
 documentReady(() => {
   // Тут исполняем скрипты
-  const { initHomeSlider, handleLayout } = sliders();
+  const { initHomeSlider, initTestimonialsSlider, handleLayout, displayArticles } = sliders();
 
-// For test needs
-// createSliderLayout()
-
-  menu();
   burger();
   form();
   marquee();
   circleText();
   tabSlider();
+  displayArticles();
 
   // Слайдеры
-  initHomeSlider();
-  handleLayout()
-
-  const throttled = throttle(handleLayout, 500)
+  initHomeSlider(homeSliderEl);
+  initTestimonialsSlider(testimonialsSliderEl);
+  handleLayout();
 
   // Тротлим инициализацию слайдера, если окно ресайзится, чтобы отключать слайдер на мобилках
-  window.addEventListener('resize', throttled);
-
-
+  window.addEventListener('resize', throttle(handleLayout, 500));
 });

@@ -1,5 +1,14 @@
 .header {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  background-color: rgba($color: white, $alpha: 90%);
   padding-block: 15px;
+  transition-duration: .3s;
+
+  &:hover {
+    background-color: white;
+  }
 
   &__container {
     @include flexHCenter;

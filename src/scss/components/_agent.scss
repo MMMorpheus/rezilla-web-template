@@ -1,0 +1,77 @@
+.agent {
+  position: relative;
+  display: grid;
+  max-width: between(333px, 1200px);
+  height: 260px;
+  align-items: center;
+  padding: 0 10% 0 30%;
+  border-radius: 40px;
+  margin: 180px auto;
+  background-color: $darkBlue;
+  gap: 15px 0;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  justify-items: start;
+  place-content: center;
+
+  @media screen and (max-width: $breakpoint992) {
+    height: auto;
+
+    // padding: 10% 7% 300px;
+    padding: 5%;
+    gap: 10px 0;
+    grid-template-columns: unset;
+    grid-template-rows: auto auto auto;
+    place-items: center;
+  }
+
+  @media screen and (max-width: $breakpoint480) {
+    padding-bottom: 300px;
+  };
+
+  &__thumb {
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+    width: 260px;
+
+    @media screen and (max-width: $breakpoint992) {
+      display: none;
+    };
+
+    @media screen and (max-width: $breakpoint480) {
+      display: block;
+    };
+  }
+
+  &__title {
+    color: $white;
+  }
+
+  &__desc {
+    color: $white;
+    grid-row-start: 2;
+
+    @media screen and (max-width: $breakpoint992) {
+      text-align: center;
+    };
+  }
+
+  &__btn {
+    @include resetBtn;
+
+    padding: 13px 25px;
+    border-radius: 30px;
+    background-color: $white;
+    color: $darkBlue;
+    font-weight: 500;
+    grid-column-start: 2;
+    grid-row: 1 / 3;
+    justify-self: center;
+
+    @media screen and (max-width: $breakpoint992) {
+      grid-column: unset;
+      grid-row: unset;
+    };
+  }
+}
