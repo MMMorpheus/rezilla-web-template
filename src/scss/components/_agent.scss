@@ -1,47 +1,95 @@
 .agent {
   position: relative;
-  display: grid;
+  display: flex;
   max-width: between(333px, 1200px);
   height: 260px;
   align-items: center;
-  padding: 0 10% 0 30%;
+  justify-content: flex-end;
+  padding: 80px between(50px, 180px, $breakpoint992);
   border-radius: 40px;
   margin: 180px auto;
   background-color: $darkBlue;
-  gap: 15px 0;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: auto auto;
-  justify-items: start;
-  place-content: center;
+  gap: 0 between(5px, 100px, $breakpoint992);
 
   @media screen and (max-width: $breakpoint992) {
     height: auto;
-
-    // padding: 10% 7% 300px;
-    padding: 5%;
+    flex-direction: column;
+    justify-content: center;
     gap: 10px 0;
-    grid-template-columns: unset;
-    grid-template-rows: auto auto auto;
-    place-items: center;
   }
 
   @media screen and (max-width: $breakpoint480) {
+    align-items: flex-start;
     padding-bottom: 300px;
-  };
+  }
 
   &__thumb {
     position: absolute;
+    z-index: 1;
     bottom: 0;
     left: 30px;
     width: 260px;
 
     @media screen and (max-width: $breakpoint992) {
       display: none;
-    };
+    }
 
     @media screen and (max-width: $breakpoint480) {
       display: block;
+    }
+  }
+
+  &__decor-1 {
+    position: absolute;
+    bottom: 20%;
+    left: 20%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #fff 0%, rgb(255 255 255 / 0%) 100%);
+    opacity: 0.5;
+    transform: rotate(-60deg);
+
+    @media screen and (max-width: $breakpoint992) {
+      bottom: -15%;
+      left: 5%;
     };
+
+    @media screen and (max-width: $breakpoint480) {
+      bottom: 25%;
+      left: 25%;
+      width: 50px;
+      height: 50px;
+    };
+  }
+
+  &__decor-2 {
+    position: absolute;
+    top: -15%;
+    right: 5%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, white 0%, rgb(255 255 255 / 0%) 100%);
+    opacity: 0.5;
+    transform: rotate(30deg);
+
+    @media screen and (max-width: $breakpoint480) {
+      top: -8%;
+    }
+  }
+
+  &__content {
+    max-width: 45%;
+
+    @media screen and (max-width: $breakpoint992) {
+      max-width: unset;
+      text-align: center;
+    }
+
+    @media screen and (max-width: $breakpoint480) {
+      text-align: left;
+    }
   }
 
   &__title {
@@ -49,12 +97,8 @@
   }
 
   &__desc {
+    padding-top: 20px;
     color: $white;
-    grid-row-start: 2;
-
-    @media screen and (max-width: $breakpoint992) {
-      text-align: center;
-    };
   }
 
   &__btn {
@@ -65,13 +109,5 @@
     background-color: $white;
     color: $darkBlue;
     font-weight: 500;
-    grid-column-start: 2;
-    grid-row: 1 / 3;
-    justify-self: center;
-
-    @media screen and (max-width: $breakpoint992) {
-      grid-column: unset;
-      grid-row: unset;
-    };
   }
 }
