@@ -112,3 +112,25 @@ body {
     line-height: 22px;
   };
 }
+
+.logo {
+  @include flexVCenter;
+
+    column-gap: 8px;
+
+    div {
+      @include flexAllCenter;
+
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: $darkBlue;
+    }
+
+    p {
+      color: $logoBlack;
+      font-size: 20px;
+      font-weight: 600;
+      text-transform: capitalize;
+    }
+}

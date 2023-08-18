@@ -1,0 +1,175 @@
+.footer {
+  padding-top: between(40px, 80px);
+  padding-bottom: between(50px, 100px);
+  background-color: $lightBlue;
+
+  &__container {
+    display: grid;
+    gap: 0 15px;
+    grid-template-columns: 1.5fr 1fr 1fr 2fr;
+
+    @media screen and (max-width: $breakpoint992) {
+      grid-template-columns: 1fr 1fr 2fr;
+    }
+
+    @media screen and (max-width: $breakpoint768) {
+      grid-template-columns: unset;
+      grid-template-rows: 1fr 1fr;
+      place-content: center;
+      place-items: center;
+    }
+  }
+
+  &__links {
+    display: block;
+    
+    @media screen and (max-width: $breakpoint768) {
+      display: none;
+    }
+  }
+
+  &__discovery {
+    display: block;
+
+    @media screen and (max-width: $breakpoint992) {
+      display: none;
+    }
+  }
+}
+
+.footer-list {
+  padding-top: 20px;
+  text-transform: capitalize;
+
+  span {
+    color: $burgerBlack;
+    font-size: 19.4px;
+    font-weight: 500;
+  }
+
+  ul {
+    @include resetList;
+
+    margin-top: 30px;
+    color: $menuBlack;
+  }
+
+  & li {
+    padding-top: 5px;
+  }
+
+  & a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-weight: 500;
+  gap: 30px 0;
+
+  @media screen and (max-width: $breakpoint768) {
+    align-items: center;
+    text-align: center;
+  };
+
+  &__item {
+    display: flex;
+    align-items: center;
+    color: $menuBlack;
+    gap: 8px;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+
+  &__item:has(a[href^="tel"]) {
+    margin-top: auto;
+  }
+}
+
+.follow {
+  padding-top: 20px;
+
+  @media screen and (max-width: $breakpoint768) {
+    text-align: center;
+  };
+
+  &__title {
+    font-size: 19.4px;
+    font-weight: 500;
+  }
+
+  &__form {
+    div {
+      position: relative;
+      display: inline-block;
+    }
+
+    input[type="email"] {
+      width: 350px;
+      height: 60px;
+      border: 0;
+      border-radius: 10px;
+      margin: 21px 0 32px;
+      background: $white;
+      box-shadow: 4px 10px 20px 0 rgb(0 0 0 / 5%);
+      text-indent: 20px;
+
+      @media screen and (max-width: $breakpoint480) {
+        width: 333px
+      };
+    }
+
+    button[type="submit"] {
+      @include resetBtn;
+      @include flexAllCenter;
+
+      position: absolute;
+      top: 26px;
+      right: 5px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: $darkBlue;
+    }
+  }
+
+  &__social {
+    margin-top: 30px;
+  }
+}
+
+.bottom {
+  padding: 15px 0;
+  background: $menuBlack;
+  color: #aaa;
+
+  &__container {
+    display: flex;
+
+    @media screen and (max-width: $breakpoint768) {
+      justify-content: center;
+    }
+  }
+
+  &__list {
+    display: flex;
+    margin-left: auto;
+    gap: 0 between(20px, 40px, $breakpoint768);
+
+    @media screen and (max-width: $breakpoint768) {
+      display: none;
+    }
+
+    & a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}

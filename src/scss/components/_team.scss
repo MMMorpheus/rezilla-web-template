@@ -1,12 +1,34 @@
 .team {
   padding-bottom: between(100px, 180px);
+  position: relative;
+
+  &__decor {
+    position: absolute;
+    top: -15%;
+    right: 8%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    transform: rotate(-30deg);
+    background: linear-gradient(180deg, #4361ee 0%, rgba(67, 97, 238, 0%) 100%);
+    opacity: 0.5;
+
+    @media screen and (max-width: $breakpoint768) {
+      top: -22%;
+      right: 26%;
+    }
+
+    @media screen and (max-width: $breakpoint480) {
+      top: -16%;
+    };
+  }
 
   &__container {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  
+
   &__title {
     padding-top: 20px;
   }
@@ -48,7 +70,8 @@
     }
   }
 
-  &__img { //stylelint-disable-line
+  &__img {
+    //stylelint-disable-line
     width: between(120px, 200px);
     height: between(168px, 280px);
     border-radius: 120px 40px 40px;

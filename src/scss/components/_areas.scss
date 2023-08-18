@@ -1,5 +1,22 @@
 .areas {
+  position: relative;
   padding-block: between(100px, 200px);
+
+  &__decor {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #4361ee 0%, rgba(67, 97, 238, 0%) 100%);
+    opacity: 0.5;
+    transform: rotate(30deg);
+
+    @media screen and (max-width: $breakpoint768) {
+      left: 75%;
+    };
+  }
 
   &__title {
     padding-top: 18px;
@@ -58,7 +75,8 @@
     }
   }
 
-  &__count { //stylelint-disable-line
+  &__count {
+    //stylelint-disable-line
     font-size: between(27.6px, 57.3px);
     font-weight: 600;
     line-height: between(25px, 65px);
