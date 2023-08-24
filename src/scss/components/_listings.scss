@@ -1,5 +1,8 @@
 .listings {
-  padding-top: between(100px, 200px);
+  padding-top: between(50px, 100px);
+  margin-bottom: between(50px, 100px);
+  height: 80vh;
+
 
   &__container {
     display: grid;

@@ -1,5 +1,6 @@
 import scroll from '../utils/scroll.js';
 import aria from '../utils/aria.js';
+import navigationScroll from '../utils/navigationScroll.js';
 import { elements } from '../app.js';
 
 export default () => {
@@ -22,26 +23,19 @@ export default () => {
 
   // Handling scroll behaviour and aria attr's by click on menu elements
   menuEl.addEventListener('click', (e) => {
-    // Preventing default link begavior
-    e.preventDefault();
-    // Highligting menu list elements
-    menuItemsEl?.forEach((li) => {
-      li.classList.remove('menu__item-active');
-    });
-    e.target.parentElement.classList.add('menu__item-active');
+
+    // // Highligting menu list elements
+    // menuItemsEl?.forEach((li) => {
+    //   li.classList.remove('menu__item-active');
+    // });
+    // e.target.closest('.menu__item').classList.add('menu__item-active');
     // Toggling burger
     if (e.target.tagName === 'A') {
       burgerEl.classList.remove('burger-active');
       menuEl.classList.remove('menu-active');
       aria.close(burgerEl, 'menu');
       scroll.enable();
+      navigationScroll(e)
     }
-    // Scroll
-    const targetEl = document.querySelector(e.target.dataset.target)
-    const scrollDistance = targetEl.getBoundingClientRect().top + window.scrollY - document.querySelector('.header').offsetHeight;
-    console.log(scrollDistance)
-    window.scrollTo({
-      top: scrollDistance
-    })
   });
 };

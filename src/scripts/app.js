@@ -1,6 +1,8 @@
 // Utils
 import documentReady from './utils/DOMLoaded.js';
 import throttle from './utils/throttle.js';
+import navigationScroll from './utils/navigationScroll.js';
+import menuObserver from './DOM/menuObserver.js';
 
 // DOM elements
 const burgerEl = document.querySelector('[data-burger]');
@@ -11,10 +13,10 @@ const circleTextEl = document.querySelector('[data-circle]');
 const tabtBtnsEl = document.querySelectorAll('[data-tabBtn]');
 const homeSliderEl = document.querySelector('[data-slider="home"]');
 const testimonialsSliderEl = document.querySelector('[data-slider="testimonials"]');
-console.log(testimonialsSliderEl)
 const blogSection = document.querySelector('.blog');
 const blogArticlesWrapper = document.querySelector('.articles__wrapper');
 const blogArticlesBtnEl = document.querySelector('.blog__showMoreBtn');
+const footerLinksEl = document.querySelector('.footer__links ul')
 
 export const elements = {
   burgerEl,
@@ -55,4 +57,11 @@ documentReady(() => {
 
   // Тротлим инициализацию слайдера, если окно ресайзится, чтобы отключать слайдер на мобилках
   window.addEventListener('resize', throttle(handleLayout, 500));
+
+  // Other
+  footerLinksEl.addEventListener('click', (e) => {
+    navigationScroll(e)
+  })
+
+  menuObserver()
 });

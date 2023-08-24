@@ -1,5 +1,6 @@
 .about {
-  padding-top: 190px;
+  padding-top: between(50px, 100px);
+  padding-bottom: between(50px, 100px);
 
   @media screen and (max-width: $breakpoint992) {
     padding-top: between(100px, 190px, $breakpoint480, $breakpoint992);
