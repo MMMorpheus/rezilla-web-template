@@ -10,7 +10,8 @@ const menuEl = document.querySelector('[data-menu');
 const menuItemsEl = document.querySelectorAll('[data-menu-item]');
 const formEl = document.querySelector('[data-form]');
 const circleTextEl = document.querySelector('[data-circle]');
-const tabtBtnsEl = document.querySelectorAll('[data-tabBtn]');
+const filtersEl = document.querySelectorAll('[data-filter]');
+const listingsEl = document.querySelectorAll('[data-listing]')
 const homeSliderEl = document.querySelector('[data-slider="home"]');
 const testimonialsSliderEl = document.querySelector('[data-slider="testimonials"]');
 const blogSection = document.querySelector('.blog');
@@ -24,7 +25,8 @@ export const elements = {
   menuItemsEl,
   formEl,
   circleTextEl,
-  tabtBtnsEl,
+  filtersEl,
+  listingsEl,
   homeSliderEl,
   blogSection,
   blogArticlesWrapper,
@@ -37,7 +39,7 @@ import form from './DOM/form.js';
 import marquee from './DOM/marquee.js';
 import sliders from './DOM/sliders.js';
 import circleText from './DOM/circleText.js';
-import tabSlider from './DOM/tabSlider.js';
+import listings from './DOM/listings.js';
 
 documentReady(() => {
   // Тут исполняем скрипты
@@ -47,7 +49,7 @@ documentReady(() => {
   form();
   marquee();
   circleText();
-  tabSlider();
+  listings();
   displayArticles();
 
   // Слайдеры
