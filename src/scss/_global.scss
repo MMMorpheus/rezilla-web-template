@@ -127,6 +127,12 @@ body {
       background-color: $darkBlue;
     }
 
+    svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
+    }
+
     p {
       color: $logoBlack;
       font-size: 20px;

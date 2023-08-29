@@ -38,7 +38,6 @@ import burger from './DOM/burger.js';
 import form from './DOM/form.js';
 import marquee from './DOM/marquee.js';
 import sliders from './DOM/sliders.js';
-import circleText from './DOM/circleText.js';
 import listings from './DOM/listings.js';
 
 documentReady(() => {
@@ -48,7 +47,6 @@ documentReady(() => {
   burger();
   form();
   marquee();
-  circleText();
   listings();
   displayArticles();
 

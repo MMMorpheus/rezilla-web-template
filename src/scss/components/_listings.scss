@@ -103,6 +103,9 @@
     }
 
     img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       scale: 1;
       transition: transform 0.3s ease-in-out;
     }
@@ -116,11 +119,10 @@
     align-items: center;
     padding: 10px 24px;
     border-radius: 20px;
-    background: #ffe1e1;
     gap: 10px;
 
     span {
-      color: #f11;
+      color: inherit;
       font-weight: 500;
     }
   }
@@ -168,5 +170,54 @@
 
   100% {
     opacity: 1;
+  }
+}
+
+.popular {
+  background: #ffe1e1;
+  color: #f11;
+
+  svg {
+    width: 20px;
+    height: 23px;
+    fill: currentcolor;
+  }
+}
+
+.new {
+  background: #d7eeff;
+  color: #119bff;
+
+  svg {
+    width: 20px;
+    height: 21px;
+    fill: currentcolor;
+  }
+}
+
+.discount {
+  background: #f1fff1;
+  color: #00ce3a;
+
+  svg {
+    width: 12px;
+    height: 20px;
+    fill: currentcolor;
+  }
+}
+
+.bed {
+  svg {
+    width: 30px;
+    height: 21.5px;
+    fill: $menuBlack;
+  }
+}
+
+.bath {
+  svg {
+    width: 24px;
+    height: 24.06px;
+    fill: $menuBlack;
   }
 }

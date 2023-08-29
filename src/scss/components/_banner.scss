@@ -4,7 +4,7 @@
 
   @media screen and (max-width: $breakpoint768) {
     display: none;
-  };
+  }
 
   &__container {
     display: flex;
@@ -12,6 +12,12 @@
 
   &__item {
     display: flex;
+    align-items: center;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
 
     p {
       margin-left: 10px;

@@ -18,7 +18,6 @@ export const scriptsBuild = () => {
     )
     .pipe(
       webpack({
-        // watch: true,
         mode: config.isProd ? 'production' : 'development',
         module: {
           rules: [

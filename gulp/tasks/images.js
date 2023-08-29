@@ -17,7 +17,7 @@ import config from '../config.js';
 
 export const compressImg = () => {
   return gulp
-    .src(config.src.img)
+    .src(config.src.img[0])
     .pipe(
       plumber(
         notify.onError({

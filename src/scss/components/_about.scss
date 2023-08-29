@@ -78,14 +78,17 @@
   grid-template-columns: auto 1fr;
 
   &__icon {
-    width: 40px;
-    height: 40px;
-    background-repeat: no-repeat;
     grid-row: 1 / span 2;
 
-    @media screen and (max-width: $breakpoint480) {
-      width: 30px;
-      height: 30px;
+    svg {
+      width: 40px;
+      height: 40px;
+      fill: $blue;
+
+      @media screen and (max-width: $breakpoint480) {
+        width: 30px;
+        height: 30px;
+      }
     }
   }
 
@@ -97,14 +100,6 @@
   &__desc {
     letter-spacing: normal;
   }
-}
-
-.icon__home {
-  background-image: url("@icons/smart_home.svg");
-}
-
-.icon__user {
-  background-image: url("@icons/user_octagon.svg");
 }
 
 .thumb {
@@ -160,12 +155,7 @@
   position: absolute;
   top: -103px; // half of the height value
   left: calc(50% - 103px);
-  width: 206px;
-  height: 206px;
-  border-radius: 50%;
   animation: spining infinite 30s linear;
-  color: $blue;
-  transform: translate(-50%, -50%);
 
   @media screen and (max-width: $breakpoint992) {
     top: -42px; // half of the height value
@@ -182,8 +172,7 @@
     @media screen and (max-width: $breakpoint992) {
       font-size: 10px;
       transform-origin: 0 62px;
-
-    };
+    }
   }
 }
 
