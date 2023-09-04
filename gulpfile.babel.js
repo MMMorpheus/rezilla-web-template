@@ -29,5 +29,5 @@ export const watch = gulp.series(
 );
 
 
-import { compressImg } from './gulp/tasks/index.js';
-export const img = compressImg
+import { toWebp } from './gulp/tasks/index.js';
+export const img = toWebp;

@@ -1,46 +1,69 @@
 <div class="home__slider hSlider">
-  <!-- An additional wrapper to position absolutly control btns -->
   <div class="hSlider__wrapper">
-    <!-- The slider itself -->
     <div
       class="swiper hSlider__body"
       data-slider="home">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img
-            src="@img/stock-1.jpg"
-            alt="Interior design free stock photo" />
+          <picture>
+            <source
+              srcset="@img/stock-1.webp"
+              type="image/webp" />
+            <img
+              class="image"
+              src="@img/stock-1."
+              alt="Interior design free stock photo"
+              loading="lazy" />
+          </picture>
         </div>
         <div class="swiper-slide">
-          <img
-            src="@img/stock-2.jpg"
-            alt="Interior design free stock photo" />
+          <picture>
+            <source
+              srcset="@img/stock-2.webp"
+              type="image/webp" />
+            <img
+              class="image"
+              src="@img/stock-2."
+              alt="Interior design free stock photo"
+              loading="lazy" />
+          </picture>
         </div>
         <div class="swiper-slide">
-          <img
-            src="@img/stock-3.jpg"
-            alt="Interior design free stock photo" />
+          <picture>
+            <source
+              srcset="@img/stock-3.webp"
+              type="image/webp" />
+            <img
+              class="image"
+              src="@img/stock-3."
+              alt="Interior design free stock photo"
+              loading="lazy" />
+          </picture>
         </div>
         <div class="swiper-slide">
-          <img
-            src="@img/stock-4.jpg"
-            alt="Interior design free stock photo" />
+          <picture>
+            <source
+              srcset="@img/stock-4.webp"
+              type="image/webp" />
+            <img
+              class="image"
+              src="@img/stock-4."
+              alt="Interior design free stock photo"
+              loading="lazy" />
+          </picture>
         </div>
       </div>
     </div>
-    <!-- Prev btn -->
     <button class="hSlider__prev">
       <svg>
         <use xlink:href="img/sprite.svg#arrowLeft"></use>
       </svg>
     </button>
-    <!-- Next btn -->
     <button class="hSlider__next">
       <svg>
         <use xlink:href="img/sprite.svg#arrowRight"></use>
       </svg>
     </button>
-    <!-- Pagination -->
     <div class="hSlider__pagination"></div>
   </div>
 </div>

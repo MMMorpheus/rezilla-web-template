@@ -1,12 +1,10 @@
 .services {
-  margin-top: between(50px, 100px);
   background-color: $selectGrey;
 
   &__container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 100px 0 between(100px, 137px);
   }
 
   &__subtitle {
@@ -56,7 +54,8 @@
     filter: drop-shadow(4px 10px 30px rgb(67 97 238 / 40%));
 
     @media screen and (max-width: $breakpoint992) {
-      width: between(60px, 90px, $breakpoint480, $breakpoint992);
+      width: between(70px, 90px, $breakpoint480, $breakpoint992);
+      height: between(70px, 90px, $breakpoint480, $breakpoint992);
       background-size: between(26px, 40px, $breakpoint480, $breakpoint992);
     };
 

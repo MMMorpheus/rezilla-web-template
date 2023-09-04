@@ -1,6 +1,6 @@
 .team {
-  padding-bottom: between(45px, 90px);
   position: relative;
+  padding-bottom: between(45px, 90px);
 
   &__decor {
     position: absolute;
@@ -9,9 +9,9 @@
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    transform: rotate(-30deg);
-    background: linear-gradient(180deg, #4361ee 0%, rgba(67, 97, 238, 0%) 100%);
+    background: linear-gradient(180deg, #4361ee 0%, rgb(67 97 238 / 0%) 100%);
     opacity: 0.5;
+    transform: rotate(-30deg);
 
     @media screen and (max-width: $breakpoint768) {
       top: -22%;
@@ -20,7 +20,7 @@
 
     @media screen and (max-width: $breakpoint480) {
       top: -16%;
-    };
+    }
   }
 
   &__container {
@@ -64,20 +64,19 @@
     }
   }
 
-  &:hover .tCard__img {
-    @media (hover: hover) {
-      box-shadow: 4px 10px 30px 0 rgb(0 0 0 / 6%);
-    }
-  }
-
   &__img {
-    //stylelint-disable-line
     width: between(120px, 200px);
     height: between(168px, 280px);
     border-radius: 120px 40px 40px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+
+  &__tCard:hover .tCard__img {
+    @media (hover: hover) {
+      box-shadow: 4px 10px 30px 0 rgb(0 0 0 / 6%);
+    }
   }
 
   &__name {
@@ -96,17 +95,17 @@
 }
 
 .img-1 {
-  background-image: url("@img/team-1.jpg");
+  background-image: image-set(url("@img/team-1.webp") type("image/webp"), url("@img/team-1.jpg"));
 }
 
 .img-2 {
-  background-image: url("@img/team-2.jpg");
+  background-image: image-set(url("@img/team-2.webp") type("image/webp"), url("@img/team-2.jpg"));
 }
 
 .img-3 {
-  background-image: url("@img/team-3.jpg");
+  background-image: image-set(url("@img/team-3.webp") type("image/webp"), url("@img/team-3.jpg"));
 }
 
 .img-4 {
-  background-image: url("@img/team-4.jpg");
+  background-image: image-set(url("@img/team-4.webp") type("image/webp"), url("@img/team-4.jpg"));
 }

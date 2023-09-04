@@ -17,7 +17,6 @@
   box-shadow: 10px 30px 50px 0 rgb(0 0 0 / 5%);
 
   @media screen and (max-width: $breakpoint992) {
-    // --formInlinePadding: between(20px, 40px, 489.98px, 991.98px);
     --formInlinePadding: 20px;
 
     padding-bottom: between(40px, 60px, $breakpoint480, $breakpoint992);
@@ -122,6 +121,7 @@
       font-size: 16px;
       font-weight: 400;
       line-height: 26px;
+      outline: none;
       padding-inline: 20px;
       text-transform: capitalize;
 

@@ -1,7 +1,5 @@
 .blog {
-  margin-top: between(45px, 90px);
   background-color: $darkBlue;
-  padding-block: 100px;
 
   &__container {
     display: flex;
@@ -71,12 +69,6 @@
     @media screen and (max-width: $breakpoint768) {
       min-height: auto;
     }
-
-    &:hover img {
-      @media (hover: hover) {
-        scale: 1.1;
-      }
-    }
   }
 
   &__link:nth-child(n + 4) {
@@ -108,12 +100,17 @@
     }
 
     img {
-      // stylelint-disable-line
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
       transition: scale 0.3s ease;
+    }
+  }
+
+  &__link:hover img {
+    @media (hover: hover) {
+      scale: 1.1;
     }
   }
 

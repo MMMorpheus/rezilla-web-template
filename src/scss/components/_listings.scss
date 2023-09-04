@@ -1,7 +1,4 @@
 .listings {
-  padding-top: between(50px, 100px);
-  margin-bottom: between(50px, 100px);
-
   &__container {
     display: grid;
     gap: 0 35px;
@@ -14,6 +11,8 @@
   }
 
   &__options {
+    display: flex;
+    gap: 30px;
     place-self: center;
   }
 
@@ -57,21 +56,18 @@
 }
 
 .item {
-  &__wrapper {
-    position: relative;
-    display: flex;
-    padding-bottom: 80vh;
-  }
-
   &__track {
-    position: absolute;
     display: flex;
     width: 100%;
-    gap: 0 50px;
+    padding-bottom: 50px;
+    gap: 50px;
+    overflow-y: auto;
 
-    &::after {
-      flex-grow: 1;
-      content: "";
+    @media screen and (max-width: $breakpoint768) {
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-bottom: 0;
+      overflow-y: unset;
     }
   }
 
@@ -91,16 +87,11 @@
   &__img {
     position: relative;
     overflow: hidden;
-    width: 340px;
+    width: between(333px, 340px);
+    height: between(220px, 340px);
     border-radius: 30px;
     aspect-ratio: 1/1;
     background: linear-gradient(180deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 50%) 100%);
-
-    &:hover img {
-      @media (hover: hover) {
-        transform: scale(1.15);
-      }
-    }
 
     img {
       width: 100%;
@@ -108,6 +99,12 @@
       object-fit: cover;
       scale: 1;
       transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  &__img:hover img {
+    @media (hover: hover) {
+      transform: scale(1.1);
     }
   }
 
@@ -123,6 +120,7 @@
 
     span {
       color: inherit;
+      font-size: between(13.3px, 16px);
       font-weight: 500;
     }
   }
@@ -130,21 +128,21 @@
   &__price {
     padding-top: 15px;
     color: $menuBlack;
-    font-size: 27.6px;
+    font-size: between(19.4px, 27.6px);
     font-weight: 600;
   }
 
   &__title {
     padding-top: 5px;
     color: $menuBlack;
-    font-size: 19.4px;
+    font-size: between(16px, 19.4px);
     font-weight: 500;
   }
 
   &__place {
     padding-top: 5px;
     color: $grey;
-    font-size: 16px;
+    font-size: between(13.3px, 16px);
     font-weight: 400;
     line-height: 26px;
   }
@@ -153,6 +151,7 @@
     display: flex;
     align-items: center;
     padding-top: 10px;
+    font-size: between(13.3px, 16px);
     gap: 20px;
 
     div {

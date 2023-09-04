@@ -1,11 +1,4 @@
 .about {
-  padding-top: between(50px, 100px);
-  padding-bottom: between(50px, 100px);
-
-  @media screen and (max-width: $breakpoint992) {
-    padding-top: between(100px, 190px, $breakpoint480, $breakpoint992);
-  }
-
   &__container {
     display: grid;
     gap: 0 40px;
@@ -109,7 +102,10 @@
   &__1 {
     width: between(170px, 280px);
     height: between(260px, 500px);
-    background-image: url("@img/thumb-1.jpg");
+    background-image: image-set(
+      url('@img/thumb-1.webp') type('image/webp'),
+      url('@img/thumb-1.jpg')
+    );
     background-position: center;
     background-size: cover;
     grid-row: 2 / span 2;
@@ -123,7 +119,10 @@
   &__2 {
     width: between(143px, 277px);
     height: between(141px, 280px);
-    background-image: url("@img/thumb-2.jpg");
+    background-image: image-set(
+      url('@img/thumb-2.webp') type('image/webp'),
+      url('@img/thumb-2.jpg')
+    );
     background-position: center;
     background-size: cover;
     grid-column: 2;
@@ -138,7 +137,10 @@
   &__3 {
     width: between(143px, 277px);
     height: between(100px, 180px);
-    background-image: url("@img/thumb-3.jpg");
+    background-image: image-set(
+      url('@img/thumb-3.webp') type('image/webp'),
+      url('@img/thumb-3.jpg')
+    );
     background-position: center;
     background-size: cover;
     grid-column: 2;

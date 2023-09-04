@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 // Body
 body {
   font-family: $fontPrimary, $fontSecondery;
@@ -32,6 +36,10 @@ body {
   @media (max-width: $breakpoint480) {
     max-width: none;
   }
+}
+
+section[class] {
+  padding-block: between(50px, 100px);
 }
 
 // Wrapper & Main css's classes press the footer to the page bottom, main element grows the whole available space of page

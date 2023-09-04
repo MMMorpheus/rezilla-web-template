@@ -1,41 +1,40 @@
-const htmlEl = document.documentElement;
 const bodyEl = document.body;
-
 const fixBlocks = document?.querySelectorAll('.fixed-block');
 const paddingOffset = `${window.innerWidth - document.body.offsetWidth}px`;
+let scrollPosition = 0;
 
-const enableScroll = () => {
-  const pagePosition = parseInt(bodyEl.dataset.position, 10);
-
-  htmlEl.style.scrollBehavior = 'smooth';
+const enableWithNoScrollOffset = () => {
   bodyEl.classList.remove('dis-scroll');
   fixBlocks?.forEach((el) => {
-    el.style.paddingRight = '0px'; // eslint-disable-line no-param-reassign
+    el.style.paddingRight = ''; // eslint-disable-line no-param-reassign
   });
-  bodyEl.style.paddingRight = '0px';
+  bodyEl.style.paddingRight = '';
   bodyEl.style.top = 'auto';
-  bodyEl.removeAttribute('data-position');
+}
+
+const enableScroll = () => {
+  enableWithNoScrollOffset();
   window.scrollTo({
-    top: pagePosition,
-    left: 0,
+    top: scrollPosition,
+    behavior: 'instant'
   });
 };
 
-const disableScroll = () => {
-  const pagePosition = window.scrollY;
-  bodyEl.dataset.position = pagePosition;
 
-  htmlEl.style.scrollBehavior = 'none';
+const disableScroll = () => {
+  scrollPosition = window.scrollY;
+
   bodyEl.classList.add('dis-scroll');
   fixBlocks?.forEach((el) => {
     el.style.paddingRight = paddingOffset; // eslint-disable-line no-param-reassign
   });
   bodyEl.style.paddingRight = paddingOffset;
-  bodyEl.style.top = `-${pagePosition}px`;
+  bodyEl.style.top = `-${scrollPosition}px`;
 };
 
 const scroll = {
-  enable: enableScroll,
+  enable: enableWithNoScrollOffset,
+  enableWithOffset: enableScroll,
   disable: disableScroll,
 };
 

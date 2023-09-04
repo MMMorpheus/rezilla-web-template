@@ -44,7 +44,7 @@
   }
 
   // The slope
-  $m: (map.get($map, list.nth($keys, 2)) - map.get($map, list.nth($keys, 1)))/ (list.nth($keys, 2) - list.nth($keys, 1));
+  $m: (map.get($map, list.nth($keys, 2)) - map.get($map, list.nth($keys, 1))) / (list.nth($keys, 2) - list.nth($keys, 1));
 
   // The y-intercept
   $b: map.get($map, list.nth($keys, 1)) - $m * list.nth($keys, 1);

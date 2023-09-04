@@ -76,7 +76,7 @@ export const compressImg = () => {
     );
 };
 
-const toWebp = () => {
+export const toWebp = () => {
   return gulp
     .src(config.src.imgToWebp)
     .pipe(
@@ -92,7 +92,7 @@ const toWebp = () => {
     .pipe(gulp.dest(config.dest.img))
     .pipe(
       debug({
-        title: 'Webp',
+        title: 'Converted to Webp format',
       })
     );
 };

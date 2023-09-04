@@ -29,10 +29,6 @@ export default () => {
         // Replacing slides to articles
         blogArticlesWrapper.innerHTML = '';
         articles.forEach((el) => blogArticlesWrapper.append(el));
-        // Сompensate for scroll to avoid UI jumping
-        window.scrollTo({
-          top: blogSection.getBoundingClientRect().top + window.scrollY,
-        });
       }
       return;
     }

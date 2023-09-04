@@ -44,6 +44,7 @@ export const spritesBuild = () => {
         mode: {
           stack: {
             sprite: '../sprite.svg',
+            example: true
           },
         },
       })

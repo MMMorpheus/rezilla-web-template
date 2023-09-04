@@ -20,7 +20,7 @@ export default function () {
       });
     },
     {
-      threshold: 0.7,
+      threshold: 0.65,
     }
   );
 
