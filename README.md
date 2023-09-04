@@ -17,3 +17,5 @@ Let me show my js project dedicated to real estate sphere to demonstrate my skil
 
 ## Summary
 If you have an idea and a desing, and You are looking for somebody to bring it to life, You came to the right place. Contact me on contact.khokhlov@gmail.com 
+
+> Report me if you find UI bugs or errors
