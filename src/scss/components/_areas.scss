@@ -95,15 +95,15 @@
 }
 
 .thumb-1 {
-  background-image: image-set(url("@img/gal-1.webp") type("image/webp"), url("@img/gal-1.jpg"));
+  @include imageSet("../img/gal-1", "jpg");
 }
 
 .thumb-2 {
-  background-image: image-set(url("@img/gal-2.webp") type("image/webp"), url("@img/gal-2.jpg"));
-}
+  @include imageSet("../img/gal-2", "jpg");}
 
 .thumb-3 {
-  background-image: image-set(url("@img/gal-3.webp") type("image/webp"), url("@img/gal-3.jpg"));
+  @include imageSet("../img/gal-3", "jpg");
+
   grid-column: span 4;
 
   @media screen and (max-width: $breakpoint768) {
@@ -112,8 +112,9 @@
 }
 
 .thumb-4 {
+  @include imageSet("../img/gal-4", "jpg");
+
   margin-left: 0;
-  background-image: image-set(url("@img/gal-4.webp") type("image/webp"), url("@img/gal-4.jpg"));
   grid-column: span 4;
 
   @media screen and (max-width: $breakpoint768) {
@@ -122,7 +123,8 @@
 }
 
 .thumb-5 {
-  background-image: image-set(url("@img/gal-5.webp") type("image/webp"), url("@img/gal-5.jpg"));
+  @include imageSet("../img/gal-5", "jpg");
+  
   grid-column: span 6;
 
   @media screen and (max-width: $breakpoint768) {

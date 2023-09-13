@@ -8,8 +8,8 @@ const enableWithNoScrollOffset = () => {
   fixBlocks?.forEach((el) => {
     el.style.paddingRight = ''; // eslint-disable-line no-param-reassign
   });
-  bodyEl.style.paddingRight = '';
-  bodyEl.style.top = 'auto';
+  bodyEl.style.paddingRight = null;
+  bodyEl.style.top = null;
 }
 
 const enableScroll = () => {
