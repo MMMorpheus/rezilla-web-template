@@ -95,17 +95,17 @@
 }
 
 .img-1 {
-  background-image: image-set(url("@img/team-1.webp") type("image/webp"), url("@img/team-1.jpg"));
+  @include imageSet("../img/team-1", "jpg");
 }
 
 .img-2 {
-  background-image: image-set(url("@img/team-2.webp") type("image/webp"), url("@img/team-2.jpg"));
+  @include imageSet("../img/team-2", "jpg");
 }
 
 .img-3 {
-  background-image: image-set(url("@img/team-3.webp") type("image/webp"), url("@img/team-3.jpg"));
+  @include imageSet("../img/team-3", "jpg");
 }
 
 .img-4 {
-  background-image: image-set(url("@img/team-4.webp") type("image/webp"), url("@img/team-4.jpg"));
+  @include imageSet("../img/team-4", "jpg");
 }

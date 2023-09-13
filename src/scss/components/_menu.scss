@@ -1,11 +1,3 @@
-// :root {
-//   --offsetHeight: 126px;
-
-//   @media screen and (max-width: $breakpoint768) {
-//     --offsetHeight: 80px;
-//   };
-// }
-
 .menu {
   @media screen and (max-width: $burgerBreakPoint) {
     position: fixed;
@@ -74,7 +66,7 @@
     column-gap: 10px;
 
     @media screen and (max-width: $burgerBreakPoint) {
-      @include flexVCenter
+      @include flexVCenter;
     }
 
     p {
@@ -88,6 +80,8 @@
   }
 
   &-active {
-    transform: translate(0);
+    @media screen and (max-width: $breakpoint992) {
+      transform: translate(0);
+    }
   }
 }
